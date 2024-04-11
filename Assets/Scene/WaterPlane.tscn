@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccg6n8vqk8b27"]
+[gd_scene load_steps=7 format=3 uid="uid://ccg6n8vqk8b27"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/Water.gdshader" id="1_lprry"]
 [ext_resource type="Texture2D" uid="uid://moj1tjhlttwl" path="res://Assets/Shaders/WaterPlaneNormal.tres" id="2_qnd1j"]
@@ -19,10 +19,10 @@ shader_parameter/albedo = Color(0, 0.32, 0.43, 1)
 shader_parameter/albedo2 = Color(0, 0.47, 0.76, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.02
-shader_parameter/time_scale = 0.13
-shader_parameter/wave_time_scale = 0.08
+shader_parameter/time_scale = 0.03
+shader_parameter/wave_time_scale = 0.055
 shader_parameter/noise_scale = 10.0
-shader_parameter/height_scale = 0.3
+shader_parameter/height_scale = 0.1
 shader_parameter/color_deep = Color(0, 0, 0, 0)
 shader_parameter/color_shallow = Color(0.121569, 0.180392, 1, 1)
 shader_parameter/beers_law = 2.0
@@ -44,11 +44,5 @@ subdivide_width = 50
 subdivide_depth = 50
 orientation = 1
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_tuvst"]
-
 [node name="WaterPlane" type="MeshInstance3D"]
 mesh = SubResource("QuadMesh_iufy3")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54281, -0.105432, -1.01518)
-mesh = SubResource("CapsuleMesh_tuvst")
