@@ -57,7 +57,7 @@ day_time = 10.9756
 latitude = 47.6
 day_of_year = 125
 use_day_time_for_shader = true
-time_scale = 0.3423
+time_scale = 0.1
 sun_base_enegry = 1.0
 moon_base_enegry = 0.1
 
