@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://by2h0mqj6kose"
+path="res://.godot/imported/SM_Prop_Pillar_Arch_Broken_02.obj-95926311d3596def63bdd9dab667e110.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Pillar_Arch_Broken_02.obj-95926311d3596def63bdd9dab667e110.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Prop_Pillar_Arch_Broken_02.obj"
+dest_files=["res://.godot/imported/SM_Prop_Pillar_Arch_Broken_02.obj-95926311d3596def63bdd9dab667e110.mesh", "res://.godot/imported/SM_Prop_Pillar_Arch_Broken_02.obj-95926311d3596def63bdd9dab667e110.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

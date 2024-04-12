@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://hplmp4353eeg"
+path="res://.godot/imported/SM_Terrain_Rubble_Pebbles_03.obj-b0704ae3a85d266e6c8467250dbe8132.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Terrain_Rubble_Pebbles_03.obj-b0704ae3a85d266e6c8467250dbe8132.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Terrain_Rubble_Pebbles_03.obj"
+dest_files=["res://.godot/imported/SM_Terrain_Rubble_Pebbles_03.obj-b0704ae3a85d266e6c8467250dbe8132.mesh", "res://.godot/imported/SM_Terrain_Rubble_Pebbles_03.obj-b0704ae3a85d266e6c8467250dbe8132.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2wj5wiql8yux"
+path="res://.godot/imported/SM_Prop_Cloud_01.obj-f276e7adade4e756b8dc7f8e43f83f2e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Cloud_01.obj-f276e7adade4e756b8dc7f8e43f83f2e.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Prop_Cloud_01.obj"
+dest_files=["res://.godot/imported/SM_Prop_Cloud_01.obj-f276e7adade4e756b8dc7f8e43f83f2e.mesh", "res://.godot/imported/SM_Prop_Cloud_01.obj-f276e7adade4e756b8dc7f8e43f83f2e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

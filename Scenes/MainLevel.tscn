@@ -1,31 +1,30 @@
-[gd_scene load_steps=11 format=3 uid="uid://qp3eutfsgqpv"]
+[gd_scene load_steps=13 format=3 uid="uid://qp3eutfsgqpv"]
 
-[ext_resource type="ArrayMesh" uid="uid://b85kr4ch0eiga" path="res://Assets/3D/FishingHole.obj" id="1_f4dx3"]
-[ext_resource type="Shader" path="res://Assets/Shaders/GroundShader.gdshader" id="2_egmsn"]
+[ext_resource type="ArrayMesh" uid="uid://b1g6qy0cl8lv3" path="res://Assets/3D/FishingHole.obj" id="1_f4dx3"]
 [ext_resource type="PackedScene" uid="uid://ccg6n8vqk8b27" path="res://Assets/Scene/WaterPlane.tscn" id="3_bagau"]
 [ext_resource type="PackedScene" uid="uid://bjjceeyq3csc3" path="res://Assets/Scene/DayNightCycle/Skybox.tscn" id="4_kewmy"]
 [ext_resource type="PackedScene" uid="uid://dthxavwwq2uvk" path="res://Scenes/CharacterScenes/rogue.tscn" id="5_ka4cc"]
-[ext_resource type="PackedScene" uid="uid://b0dfc5akx67ol" path="res://Assets/3D/Scenery/SM_Rock_Cluster_Large_01.fbx" id="6_2h7wn"]
-[ext_resource type="PackedScene" uid="uid://y75go2p4yica" path="res://Assets/3D/Scenery/SM_Rock_Cluster_Large_02.fbx" id="7_xnt6j"]
-[ext_resource type="PackedScene" uid="uid://csd4qe34wtrt" path="res://Assets/3D/Scenery/SM_Tree_Large_01.fbx" id="8_p26f8"]
-[ext_resource type="PackedScene" uid="uid://113d7ed8l3lx" path="res://Assets/3D/Scenery/SM_Tree_Generic_Giant_01.fbx" id="9_7v7dc"]
+[ext_resource type="PackedScene" uid="uid://b0dfc5akx67ol" path="res://Assets/3D/Scenery/fbx/SM_Rock_Cluster_Large_01.fbx" id="6_2h7wn"]
+[ext_resource type="PackedScene" uid="uid://y75go2p4yica" path="res://Assets/3D/Scenery/fbx/SM_Rock_Cluster_Large_02.fbx" id="7_xnt6j"]
+[ext_resource type="PackedScene" uid="uid://csd4qe34wtrt" path="res://Assets/3D/Scenery/fbx/SM_Tree_Large_01.fbx" id="8_p26f8"]
+[ext_resource type="PackedScene" uid="uid://113d7ed8l3lx" path="res://Assets/3D/Scenery/fbx/SM_Tree_Generic_Giant_01.fbx" id="9_7v7dc"]
+[ext_resource type="Material" uid="uid://bdy4x4s2dbrdl" path="res://Assets/3D/Scenery/SharedMaterials/DockMaterial.tres" id="9_kxl0l"]
+[ext_resource type="ArrayMesh" uid="uid://cv6bx4pn7wqt6" path="res://Assets/3D/Props/SM_Prop_Dock_01.obj" id="10_xmaiw"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7kj43"]
-render_priority = 0
-shader = ExtResource("2_egmsn")
-shader_parameter/GrassColor = Color(0.337255, 0.670588, 0.2, 1)
-shader_parameter/PathColor = Color(0.769188, 0.738848, 0.311725, 1)
-shader_parameter/PathGrassCutoff = 0.999
-shader_parameter/Roughness = 1.0
+[sub_resource type="SphereShape3D" id="SphereShape3D_bv8bl"]
+radius = 5.40702
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yhbg5"]
+radius = 4.62851
+height = 21.1625
 
 [node name="MainLevel" type="Node3D"]
 
 [node name="GroundGeometry" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_f4dx3")
-surface_material_override/0 = SubResource("ShaderMaterial_7kj43")
 
 [node name="WaterPlane" parent="." instance=ExtResource("3_bagau")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.0739, -0.245871, 1.5154)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 46.1376, -0.2, 7.32626)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.0890334, 0.319836, -0.943281, 0.0300548, 0.947473, 0.318421, 0.995575, 0, -0.0939693, 0, 4.77453, 0)
@@ -124,28 +123,50 @@ clouds_cutoff = 0.5
 sun_base_enegry = 0.7
 
 [node name="SM_Rock_Cluster_Large_01" parent="." instance=ExtResource("6_2h7wn")]
-transform = Transform3D(0.399069, 0, 0.916921, 0, 1, 0, -0.916921, 0, 0.399069, 33.693, 0, 17.1307)
+transform = Transform3D(0.590197, 0, 0.807259, 0, 1, 0, -0.807259, 0, 0.590197, 77.7909, 0, 38.36)
 
 [node name="SM_Rock_Cluster_Large_02" parent="SM_Rock_Cluster_Large_01" instance=ExtResource("7_xnt6j")]
 transform = Transform3D(0.399069, 0, -0.916921, 0, 1, 0, 0.916921, 0, 0.399069, 17.7171, 0, 1.06083)
 
 [node name="SM_Tree_Large_01" parent="." instance=ExtResource("8_p26f8")]
-transform = Transform3D(0.763999, 0, -0.645218, 0, 1, 0, 0.645218, 0, 0.763999, 24.7024, 0, -8.71759)
+transform = Transform3D(1.528, 0, -1.29044, 0, 2, 0, 1.29044, 0, 1.528, 73.2425, 0, -8.46876)
 
 [node name="SM_Tree_Large_02" parent="." instance=ExtResource("8_p26f8")]
-transform = Transform3D(-0.950065, 0, -0.312053, 0, 1, 0, 0.312053, 0, -0.950065, 16.7605, 0, -16.2079)
+transform = Transform3D(-1.4251, 0, -0.46808, 0, 1.5, 0, 0.46808, 0, -1.4251, 79.4304, 0, 13.0559)
+
+[node name="Large Tree" parent="." instance=ExtResource("9_7v7dc")]
+transform = Transform3D(-1.17605, 0, -2.75988, 0, 3, 0, 2.75988, 0, -1.17605, 44.3488, 0.436378, 49.6752)
 
 [node name="SM_Tree_Large_03" parent="." instance=ExtResource("8_p26f8")]
-transform = Transform3D(-0.344184, 0, 0.938902, 0, 1, 0, -0.938902, 0, -0.344184, 22.2837, 0, 19.6784)
-
-[node name="Large Tree" parent="SM_Tree_Large_03" instance=ExtResource("9_7v7dc")]
-transform = Transform3D(-0.344184, 0, -0.938902, 0, 1, 0, 0.938902, 0, -0.344184, 10.0047, 4.89206, 17.6782)
+transform = Transform3D(-0.481858, 0, 1.31446, 0, 1.4, 0, -1.31446, 0, -0.481858, 64.3945, 0, 40.0828)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74224, 2.26613, -1.65173)
+visible = false
 light_color = Color(1, 1, 0.588235, 1)
 shadow_enabled = true
 distance_fade_enabled = true
 omni_range = 13.6914
+
+[node name="SmPropDock01" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, 17.5808, -0.636068, 2.10239)
+material_override = ExtResource("9_kxl0l")
+mesh = ExtResource("10_xmaiw")
+
+[node name="SmPropDock02" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 22.5099, -0.636068, 2.07174)
+material_override = ExtResource("9_kxl0l")
+mesh = ExtResource("10_xmaiw")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, -0.000165011, 3.8012e-05, 0.000164998, 1, 0.000264622, -3.80648e-05, -0.000264614, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.38941, 3.1701, 0)
+shape = SubResource("SphereShape3D_bv8bl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 7.87508)
+shape = SubResource("CapsuleShape3D_yhbg5")
 
 [editable path="Rogue"]

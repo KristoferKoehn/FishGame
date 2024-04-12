@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cuhac7n0pxiin"
+path="res://.godot/imported/SM_Prop_Pillar_Arch_Moss_01.obj-65b2714c33f376d476d294dd2a6fe1fb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Pillar_Arch_Moss_01.obj-65b2714c33f376d476d294dd2a6fe1fb.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Prop_Pillar_Arch_Moss_01.obj"
+dest_files=["res://.godot/imported/SM_Prop_Pillar_Arch_Moss_01.obj-65b2714c33f376d476d294dd2a6fe1fb.mesh", "res://.godot/imported/SM_Prop_Pillar_Arch_Moss_01.obj-65b2714c33f376d476d294dd2a6fe1fb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

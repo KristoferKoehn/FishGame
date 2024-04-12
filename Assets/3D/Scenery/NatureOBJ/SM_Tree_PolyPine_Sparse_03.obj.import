@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bq31bxnydy83a"
+path="res://.godot/imported/SM_Tree_PolyPine_Sparse_03.obj-2e237743919697525acb362fdbcdafee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Tree_PolyPine_Sparse_03.obj-2e237743919697525acb362fdbcdafee.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Tree_PolyPine_Sparse_03.obj"
+dest_files=["res://.godot/imported/SM_Tree_PolyPine_Sparse_03.obj-2e237743919697525acb362fdbcdafee.mesh", "res://.godot/imported/SM_Tree_PolyPine_Sparse_03.obj-2e237743919697525acb362fdbcdafee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

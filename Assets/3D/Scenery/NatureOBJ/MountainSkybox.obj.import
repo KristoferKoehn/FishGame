@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dpl54f1aqve1p"
+path="res://.godot/imported/MountainSkybox.obj-1e673df474e807327f1724f2149ec65e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MountainSkybox.obj-1e673df474e807327f1724f2149ec65e.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/MountainSkybox.obj"
+dest_files=["res://.godot/imported/MountainSkybox.obj-1e673df474e807327f1724f2149ec65e.mesh", "res://.godot/imported/MountainSkybox.obj-1e673df474e807327f1724f2149ec65e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

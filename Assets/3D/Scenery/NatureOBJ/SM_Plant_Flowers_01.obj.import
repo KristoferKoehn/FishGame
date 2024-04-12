@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bubncd6sgv1t1"
+path="res://.godot/imported/SM_Plant_Flowers_01.obj-5a72367487458a236ab560e8bc9c534c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Plant_Flowers_01.obj-5a72367487458a236ab560e8bc9c534c.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Plant_Flowers_01.obj"
+dest_files=["res://.godot/imported/SM_Plant_Flowers_01.obj-5a72367487458a236ab560e8bc9c534c.mesh", "res://.godot/imported/SM_Plant_Flowers_01.obj-5a72367487458a236ab560e8bc9c534c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cfhy8fui07fpa"
+path="res://.godot/imported/SM_Tree_Birch_Small_01_Leaves.obj-5f308273e045e00d65daa897550264d8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Tree_Birch_Small_01_Leaves.obj-5f308273e045e00d65daa897550264d8.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Tree_Birch_Small_01_Leaves.obj"
+dest_files=["res://.godot/imported/SM_Tree_Birch_Small_01_Leaves.obj-5f308273e045e00d65daa897550264d8.mesh", "res://.godot/imported/SM_Tree_Birch_Small_01_Leaves.obj-5f308273e045e00d65daa897550264d8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2f0jnm7727to"
+path="res://.godot/imported/SM_Prop_Chest_Wood_Lid.obj-2618e4a49729de936d081463bcdc6317.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Chest_Wood_Lid.obj-2618e4a49729de936d081463bcdc6317.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Prop_Chest_Wood_Lid.obj"
+dest_files=["res://.godot/imported/SM_Prop_Chest_Wood_Lid.obj-2618e4a49729de936d081463bcdc6317.mesh", "res://.godot/imported/SM_Prop_Chest_Wood_Lid.obj-2618e4a49729de936d081463bcdc6317.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -2,7 +2,9 @@ shader_type spatial;
 
 uniform vec3 GrassColor : source_color;
 uniform vec3 PathColor : source_color;
-uniform float PathGrassCutoff;
+//const float PathGrassCutoff = 0.99999;
+const float PathGrassCutoff = 0.9;
+
 uniform float Roughness;
 
 float dotProduct(vec3 v1, vec3 v2) {
