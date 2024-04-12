@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5k4qh6b2i007"
+path="res://.godot/imported/SM_Tree_Pine_Large_02_Leaves.obj-b85bf7eec56291675dc5325876ef3cd5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Tree_Pine_Large_02_Leaves.obj-b85bf7eec56291675dc5325876ef3cd5.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Tree_Pine_Large_02_Leaves.obj"
+dest_files=["res://.godot/imported/SM_Tree_Pine_Large_02_Leaves.obj-b85bf7eec56291675dc5325876ef3cd5.mesh", "res://.godot/imported/SM_Tree_Pine_Large_02_Leaves.obj-b85bf7eec56291675dc5325876ef3cd5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

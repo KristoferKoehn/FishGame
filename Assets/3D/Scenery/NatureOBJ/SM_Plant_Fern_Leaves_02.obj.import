@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bkjce4tsi4ybf"
+path="res://.godot/imported/SM_Plant_Fern_Leaves_02.obj-2b797ea776ab37586e6a526b9569a5ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Plant_Fern_Leaves_02.obj-2b797ea776ab37586e6a526b9569a5ce.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Plant_Fern_Leaves_02.obj"
+dest_files=["res://.godot/imported/SM_Plant_Fern_Leaves_02.obj-2b797ea776ab37586e6a526b9569a5ce.mesh", "res://.godot/imported/SM_Plant_Fern_Leaves_02.obj-2b797ea776ab37586e6a526b9569a5ce.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

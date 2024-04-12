@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dylf1ftfvmvt6"
+path="res://.godot/imported/SM_Tree_Willow_Small_01_Leave.obj-dcc3d6bb506f7dd1d0882976b1a13401.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Tree_Willow_Small_01_Leave.obj-dcc3d6bb506f7dd1d0882976b1a13401.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Tree_Willow_Small_01_Leave.obj"
+dest_files=["res://.godot/imported/SM_Tree_Willow_Small_01_Leave.obj-dcc3d6bb506f7dd1d0882976b1a13401.mesh", "res://.godot/imported/SM_Tree_Willow_Small_01_Leave.obj-dcc3d6bb506f7dd1d0882976b1a13401.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bs7d6ymomtsog"
+path="res://.godot/imported/SM_Rock_Cluster_Large_02.obj-0991290e91cb1cede02a29b819e214bd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Rock_Cluster_Large_02.obj-0991290e91cb1cede02a29b819e214bd.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Rock_Cluster_Large_02.obj"
+dest_files=["res://.godot/imported/SM_Rock_Cluster_Large_02.obj-0991290e91cb1cede02a29b819e214bd.mesh", "res://.godot/imported/SM_Rock_Cluster_Large_02.obj-0991290e91cb1cede02a29b819e214bd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

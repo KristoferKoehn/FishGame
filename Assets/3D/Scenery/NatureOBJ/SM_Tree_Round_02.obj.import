@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clvfrb78oqhxi"
+path="res://.godot/imported/SM_Tree_Round_02.obj-3be124121671e04068694f9d00ba6ef4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Tree_Round_02.obj-3be124121671e04068694f9d00ba6ef4.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Tree_Round_02.obj"
+dest_files=["res://.godot/imported/SM_Tree_Round_02.obj-3be124121671e04068694f9d00ba6ef4.mesh", "res://.godot/imported/SM_Tree_Round_02.obj-3be124121671e04068694f9d00ba6ef4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

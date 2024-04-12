@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bw12xdiksx0xb"
+path="res://.godot/imported/SM_Rock_CaveEntrance_02.obj-e4a00ea671e1a5a6858b34d1c86bc311.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Rock_CaveEntrance_02.obj-e4a00ea671e1a5a6858b34d1c86bc311.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Rock_CaveEntrance_02.obj"
+dest_files=["res://.godot/imported/SM_Rock_CaveEntrance_02.obj-e4a00ea671e1a5a6858b34d1c86bc311.mesh", "res://.godot/imported/SM_Rock_CaveEntrance_02.obj-e4a00ea671e1a5a6858b34d1c86bc311.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

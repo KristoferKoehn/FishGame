@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwi3hiq5eolhi"
+path="res://.godot/imported/SM_Tree_Dead_02.obj-1daa258fcb2d6f1d7a9d106918c5d751.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Tree_Dead_02.obj-1daa258fcb2d6f1d7a9d106918c5d751.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Tree_Dead_02.obj"
+dest_files=["res://.godot/imported/SM_Tree_Dead_02.obj-1daa258fcb2d6f1d7a9d106918c5d751.mesh", "res://.godot/imported/SM_Tree_Dead_02.obj-1daa258fcb2d6f1d7a9d106918c5d751.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

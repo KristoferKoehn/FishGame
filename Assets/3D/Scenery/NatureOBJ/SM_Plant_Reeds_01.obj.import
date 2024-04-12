@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cw66ukpudw3bx"
+path="res://.godot/imported/SM_Plant_Reeds_01.obj-f094489c7848de7af5f07e353a51638b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Plant_Reeds_01.obj-f094489c7848de7af5f07e353a51638b.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Plant_Reeds_01.obj"
+dest_files=["res://.godot/imported/SM_Plant_Reeds_01.obj-f094489c7848de7af5f07e353a51638b.mesh", "res://.godot/imported/SM_Plant_Reeds_01.obj-f094489c7848de7af5f07e353a51638b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

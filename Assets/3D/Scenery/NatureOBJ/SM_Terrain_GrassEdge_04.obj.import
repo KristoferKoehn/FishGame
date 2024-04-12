@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnydqko3c2son"
+path="res://.godot/imported/SM_Terrain_GrassEdge_04.obj-26c4ecc3247021a92e81a93ff4da841f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Terrain_GrassEdge_04.obj-26c4ecc3247021a92e81a93ff4da841f.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Terrain_GrassEdge_04.obj"
+dest_files=["res://.godot/imported/SM_Terrain_GrassEdge_04.obj-26c4ecc3247021a92e81a93ff4da841f.mesh", "res://.godot/imported/SM_Terrain_GrassEdge_04.obj-26c4ecc3247021a92e81a93ff4da841f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

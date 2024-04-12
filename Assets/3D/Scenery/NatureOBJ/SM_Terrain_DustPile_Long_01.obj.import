@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bvc7eetj7wdca"
+path="res://.godot/imported/SM_Terrain_DustPile_Long_01.obj-d24f815d2598cd83aa3249b1cde6171d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Terrain_DustPile_Long_01.obj-d24f815d2598cd83aa3249b1cde6171d.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Terrain_DustPile_Long_01.obj"
+dest_files=["res://.godot/imported/SM_Terrain_DustPile_Long_01.obj-d24f815d2598cd83aa3249b1cde6171d.mesh", "res://.godot/imported/SM_Terrain_DustPile_Long_01.obj-d24f815d2598cd83aa3249b1cde6171d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

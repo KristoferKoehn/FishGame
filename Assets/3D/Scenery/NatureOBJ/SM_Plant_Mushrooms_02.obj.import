@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7hfsgriaqqe0"
+path="res://.godot/imported/SM_Plant_Mushrooms_02.obj-5045f0dce63e0fed898d8f8eb07bf594.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Plant_Mushrooms_02.obj-5045f0dce63e0fed898d8f8eb07bf594.mesh"]
+
+source_file="res://Assets/3D/Scenery/NatureOBJ/SM_Plant_Mushrooms_02.obj"
+dest_files=["res://.godot/imported/SM_Plant_Mushrooms_02.obj-5045f0dce63e0fed898d8f8eb07bf594.mesh", "res://.godot/imported/SM_Plant_Mushrooms_02.obj-5045f0dce63e0fed898d8f8eb07bf594.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
