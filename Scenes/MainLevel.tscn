@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qp3eutfsgqpv"]
+[gd_scene load_steps=14 format=3 uid="uid://qp3eutfsgqpv"]
 
 [ext_resource type="PackedScene" uid="uid://ccg6n8vqk8b27" path="res://Assets/Scene/WaterPlane.tscn" id="3_bagau"]
 [ext_resource type="PackedScene" uid="uid://bjjceeyq3csc3" path="res://Assets/Scene/DayNightCycle/Skybox.tscn" id="4_kewmy"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://113d7ed8l3lx" path="res://Assets/3D/Scenery/fbx/SM_Tree_Generic_Giant_01.fbx" id="9_7v7dc"]
 [ext_resource type="Material" uid="uid://bdy4x4s2dbrdl" path="res://Assets/3D/Scenery/SharedMaterials/DockMaterial.tres" id="9_kxl0l"]
 [ext_resource type="ArrayMesh" uid="uid://cv6bx4pn7wqt6" path="res://Assets/3D/Props/SM_Prop_Dock_01.obj" id="10_xmaiw"]
+[ext_resource type="PackedScene" uid="uid://clxt0py6nf2d8" path="res://Assets/3D/LakeGroundGeometry.glb" id="11_ktrch"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bv8bl"]
 radius = 5.40702
@@ -21,10 +22,10 @@ height = 21.1625
 [node name="MainLevel" type="Node3D"]
 
 [node name="WaterPlane" parent="." instance=ExtResource("3_bagau")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 46.1376, -0.2, 7.32626)
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 46.1376, -0.2, 7.32626)
 
 [node name="Rogue" parent="." instance=ExtResource("5_ka4cc")]
-transform = Transform3D(-0.549373, 0, 0.835577, 0, 1, 0, -0.835577, 0, -0.549373, 8.18348, 0.0152063, 11.8499)
+transform = Transform3D(-0.549373, 0, 0.835577, 0, 1, 0, -0.835577, 0, -0.549373, -17.4753, 0.0152063, 11.8499)
 
 [node name="Skeleton3D" parent="Rogue/Rig" index="0"]
 bones/0/rotation = Quaternion(0, 1.1921e-07, 0, 1)
@@ -101,22 +102,22 @@ clouds_cutoff = 0.5
 sun_base_enegry = 0.7
 
 [node name="SM_Rock_Cluster_Large_01" parent="." instance=ExtResource("6_2h7wn")]
-transform = Transform3D(0.590197, 0, 0.807259, 0, 1, 0, -0.807259, 0, 0.590197, 77.7909, 0, 38.36)
+transform = Transform3D(0.590197, 0, 0.807259, 0, 1, 0, -0.807259, 0, 0.590197, 137.194, 0, 38.36)
 
 [node name="SM_Rock_Cluster_Large_02" parent="SM_Rock_Cluster_Large_01" instance=ExtResource("7_xnt6j")]
 transform = Transform3D(0.399069, 0, -0.916921, 0, 1, 0, 0.916921, 0, 0.399069, 17.7171, 0, 1.06083)
 
 [node name="SM_Tree_Large_01" parent="." instance=ExtResource("8_p26f8")]
-transform = Transform3D(1.528, 0, -1.29044, 0, 2, 0, 1.29044, 0, 1.528, 73.2425, 0, -8.46876)
+transform = Transform3D(1.528, 0, -1.29044, 0, 2, 0, 1.29044, 0, 1.528, 132.646, 0, -8.46876)
 
 [node name="SM_Tree_Large_02" parent="." instance=ExtResource("8_p26f8")]
-transform = Transform3D(-1.4251, 0, -0.46808, 0, 1.5, 0, 0.46808, 0, -1.4251, 79.4304, 0, 13.0559)
+transform = Transform3D(-1.4251, 0, -0.46808, 0, 1.5, 0, 0.46808, 0, -1.4251, 138.834, 0, 13.0559)
 
 [node name="Large Tree" parent="." instance=ExtResource("9_7v7dc")]
-transform = Transform3D(-1.17605, 0, -2.75988, 0, 3, 0, 2.75988, 0, -1.17605, 44.3488, 0.436378, 49.6752)
+transform = Transform3D(-1.17605, 0, -2.75988, 0, 3, 0, 2.75988, 0, -1.17605, 103.752, 0.436378, 49.6752)
 
 [node name="SM_Tree_Large_03" parent="." instance=ExtResource("8_p26f8")]
-transform = Transform3D(-0.481858, 0, 1.31446, 0, 1.4, 0, -1.31446, 0, -0.481858, 64.3945, 0, 40.0828)
+transform = Transform3D(-0.481858, 0, 1.31446, 0, 1.4, 0, -1.31446, 0, -0.481858, 123.798, 0, 40.0828)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74224, 2.26613, -1.65173)
@@ -127,12 +128,12 @@ distance_fade_enabled = true
 omni_range = 13.6914
 
 [node name="SmPropDock01" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, 17.5808, -0.636068, 2.10239)
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, 6.93796, -0.636068, 2.10239)
 material_override = ExtResource("9_kxl0l")
 mesh = ExtResource("10_xmaiw")
 
 [node name="SmPropDock02" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 22.5099, -0.636068, 2.07174)
+transform = Transform3D(-4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 11.8671, -0.636068, 2.07174)
 material_override = ExtResource("9_kxl0l")
 mesh = ExtResource("10_xmaiw")
 
@@ -149,5 +150,8 @@ shape = SubResource("CapsuleShape3D_yhbg5")
 
 [node name="CameraPosition1" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25, 5, -35)
+
+[node name="LakeGroundGeometry" parent="." instance=ExtResource("11_ktrch")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 51.1445, 0, 11.7086)
 
 [editable path="Rogue"]
