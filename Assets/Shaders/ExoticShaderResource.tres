@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://ddx88w6c55m52"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bcqgv15c8on0"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/RaindbowTest.gdshader" id="1_ar2d2"]
 
