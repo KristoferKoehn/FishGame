@@ -36,7 +36,7 @@ shader_parameter/stars_speed = 1.0
 shader_parameter/stars_scale = 1.0
 shader_parameter/stars_opacity = 1.0
 shader_parameter/stars_texture = ExtResource("3_mjyi7")
-shader_parameter/overwritten_time = 301098.0
+shader_parameter/overwritten_time = 301117.0
 
 [sub_resource type="Sky" id="Sky_q13r3"]
 sky_material = SubResource("ShaderMaterial_msgkm")
@@ -45,8 +45,7 @@ sky_material = SubResource("ShaderMaterial_msgkm")
 background_mode = 2
 sky = SubResource("Sky_q13r3")
 ambient_light_source = 3
-ambient_light_sky_contribution = 0.2
-glow_enabled = true
+ambient_light_sky_contribution = 0.03
 fog_light_color = Color(0.192157, 0.552941, 0.776471, 1)
 fog_light_energy = 0.2
 fog_density = 0.005
@@ -70,6 +69,7 @@ rotation_order = 4
 shadow_enabled = true
 shadow_opacity = 0.75
 shadow_blur = 5.0
+directional_shadow_mode = 0
 
 [node name="Moon" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.660938, 0.208132, -0.721, 0.750421, -0.190051, 0.633047, -0.00526923, -0.959458, -0.281799, 0, 0, 0)
