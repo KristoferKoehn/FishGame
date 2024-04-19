@@ -176,6 +176,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.435
 shape = SubResource("BoxShape3D_vr5nj")
 
 [node name="FishingArea" parent="." instance=ExtResource("9_a5l3i")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.2216, 0, 2.01215)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.8305, 0, 2.01215)
 
 [editable path="LakeGroundGeometry"]
