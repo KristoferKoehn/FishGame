@@ -1,12 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://qp3eutfsgqpv"]
+[gd_scene load_steps=22 format=3 uid="uid://qp3eutfsgqpv"]
 
 [ext_resource type="PackedScene" uid="uid://ccg6n8vqk8b27" path="res://Assets/Scene/WaterPlane.tscn" id="3_bagau"]
-[ext_resource type="Material" path="res://Assets/Shaders/OutlineShaderResource.tres" id="4_hifan"]
+[ext_resource type="Material" uid="uid://dxxcp2xqntxwj" path="res://Assets/Shaders/OutlineShaderResource.tres" id="4_hifan"]
 [ext_resource type="PackedScene" uid="uid://bjjceeyq3csc3" path="res://Assets/Scene/DayNightCycle/Skybox.tscn" id="4_kewmy"]
-[ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="4_yi0v5"]
+[ext_resource type="Script" path="res://Scenes/GameScenes/PrimaryGameScene/camera_3d.gd" id="4_yi0v5"]
 [ext_resource type="PackedScene" uid="uid://dthxavwwq2uvk" path="res://Scenes/CharacterScenes/rogue.tscn" id="5_ka4cc"]
 [ext_resource type="PackedScene" uid="uid://doyisa4ue0s8s" path="res://Scenes/Utility/FishingArea.tscn" id="9_a5l3i"]
 [ext_resource type="Material" uid="uid://bdy4x4s2dbrdl" path="res://Assets/3D/Scenery/SharedMaterials/DockMaterial.tres" id="9_kxl0l"]
+[ext_resource type="Script" path="res://Scenes/GameScenes/PrimaryGameScene/ui.gd" id="10_qyfc1"]
 [ext_resource type="ArrayMesh" uid="uid://cv6bx4pn7wqt6" path="res://Assets/3D/Props/SM_Prop_Dock_01.obj" id="10_xmaiw"]
 [ext_resource type="PackedScene" uid="uid://clxt0py6nf2d8" path="res://Assets/3D/LakeGroundGeometry.glb" id="11_ktrch"]
 
@@ -61,7 +62,6 @@ script = ExtResource("4_yi0v5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_kecft")
 
@@ -178,5 +178,27 @@ shape = SubResource("BoxShape3D_vr5nj")
 
 [node name="FishingArea" parent="." instance=ExtResource("9_a5l3i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.2216, 0, 2.01215)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_qyfc1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GetQuestion" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "Get Question"
+
+[node name="Count" type="Label" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[connection signal="button_down" from="UI/HBoxContainer/GetQuestion" to="UI" method="_on_get_question_button_down"]
 
 [editable path="LakeGroundGeometry"]

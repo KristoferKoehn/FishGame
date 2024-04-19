@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://oph5th2cuogi"]
+
+[ext_resource type="Script" path="res://Scenes/GameScenes/GameEntryPoint/game_entry_point.gd" id="1_syj3n"]
+
+[node name="GameEntryPoint" type="Node"]
+script = ExtResource("1_syj3n")

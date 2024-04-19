@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://xq5or01bxohk"]
+
+[ext_resource type="Script" path="res://Scenes/Managers/EducationManager/education_manager.gd" id="1_jc46m"]
+[ext_resource type="PackedScene" uid="uid://27hbk3iyhtik" path="res://Scenes/Managers/EducationManager/QuestionSettings/QuestionSettings.tscn" id="2_iaa0t"]
+
+[node name="EducationManager" type="Node"]
+script = ExtResource("1_jc46m")
+
+[node name="QuestionSettings" parent="." instance=ExtResource("2_iaa0t")]

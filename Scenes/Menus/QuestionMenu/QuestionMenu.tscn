@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://c50psla478wk0"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/QuestionMenu/question_menu.gd" id="1_dxhc1"]
+[ext_resource type="Texture2D" uid="uid://bow5bdn24cfs7" path="res://icon.svg" id="2_yp4xo"]
+
+[node name="QuestionMenu" type="Node2D"]
+script = ExtResource("1_dxhc1")
+
+[node name="QuestionUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestionUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionUI/MarginContainer"]
+layout_mode = 2
+
+[node name="QuestionPrompt" type="Label" parent="QuestionUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Multiply the following numbers: "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestionUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="QuestionText" type="Label" parent="QuestionUI/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "99 X 99 = "
+
+[node name="LineEdit" type="LineEdit" parent="QuestionUI/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_to_text_length = true
+clear_button_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestionUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="Submit" type="Button" parent="QuestionUI/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Submit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yp4xo")
+
+[connection signal="button_down" from="QuestionUI/MarginContainer/VBoxContainer/MarginContainer/Submit" to="." method="_on_submit_button_down"]

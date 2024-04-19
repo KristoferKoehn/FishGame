@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dedi4f6b1al4c"]
+
+[ext_resource type="PackedScene" uid="uid://2jep8lh67cs8" path="res://Scenes/Managers/EducationManager/QuestionGenerators/QuestionGenerator.tscn" id="1_83m2w"]
+[ext_resource type="Script" path="res://Scenes/Managers/EducationManager/QuestionGenerators/DivisionQuestionGenerators/DivisionSingleDigitQuestionGenerator/division_single_digit_question_generator.gd" id="2_07e0j"]
+
+[node name="DivisionSingleDigitQuestionGenerator" instance=ExtResource("1_83m2w")]
+script = ExtResource("2_07e0j")

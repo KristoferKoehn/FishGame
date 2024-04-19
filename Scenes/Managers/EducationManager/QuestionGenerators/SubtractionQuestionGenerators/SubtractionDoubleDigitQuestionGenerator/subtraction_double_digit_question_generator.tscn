@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://e1yhnom2r2ca"]
+
+[ext_resource type="PackedScene" uid="uid://2jep8lh67cs8" path="res://Scenes/Managers/EducationManager/QuestionGenerators/QuestionGenerator.tscn" id="1_smfbi"]
+[ext_resource type="Script" path="res://Scenes/Managers/EducationManager/QuestionGenerators/SubtractionQuestionGenerators/SubtractionDoubleDigitQuestionGenerator/subtraction_double_digit_question_generator.gd" id="2_3g1cw"]
+
+[node name="SubtractionDoubleDigitQuestionGenerator" instance=ExtResource("1_smfbi")]
+script = ExtResource("2_3g1cw")

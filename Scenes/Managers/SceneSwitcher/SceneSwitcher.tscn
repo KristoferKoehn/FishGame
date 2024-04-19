@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://x00c5p5vk2x5"]
+
+[ext_resource type="Script" path="res://Scenes/Managers/SceneSwitcher/scene_switcher.gd" id="1_pdlog"]
+
+[node name="SceneSwitcher" type="Node"]
+script = ExtResource("1_pdlog")
