@@ -16,7 +16,7 @@ curve_step = 10.0
 depth = 0.3
 
 [node name="3dText" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105396, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.311596, 0)
 script = ExtResource("1_0ypxm")
 text = "sample text"
 

@@ -14,9 +14,6 @@ func _on_area_3d_body_entered(_body:Node3D) -> void:
 		current_floating.position = text_point.position
 		add_child(current_floating)
 
-	
-
-
 func _on_area_3d_body_exited(_body:Node3D) -> void:
 	if _body.name != "Rogue": return
 	if current_floating != null:
