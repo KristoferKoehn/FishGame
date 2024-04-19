@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://lkymhgruy2og"]
+
+[ext_resource type="Script" path="res://Scenes/Utility/3d_text.gd" id="1_0ypxm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfbrr"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_mxjdx"]
+material = SubResource("StandardMaterial3D_nfbrr")
+text = "sample text"
+font_size = 64
+pixel_size = 0.02
+curve_step = 10.0
+depth = 0.3
+
+[node name="3dText" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.311596, 0)
+script = ExtResource("1_0ypxm")
+text = "sample text"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("TextMesh_mxjdx")

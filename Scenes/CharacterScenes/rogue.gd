@@ -24,8 +24,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		var targetTransform = transform.looking_at(global_position - direction)
-		targetTransform.basis.x.x = 0.0
-		targetTransform.basis.z.z = 0.0
 		
 		transform = transform.interpolate_with(targetTransform, TURN_SPEED * delta)
 	else:
