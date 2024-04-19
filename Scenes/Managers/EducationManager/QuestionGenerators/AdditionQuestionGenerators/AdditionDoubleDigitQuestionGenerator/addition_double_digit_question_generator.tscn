@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1w123fghj586"]
+
+[ext_resource type="PackedScene" uid="uid://2jep8lh67cs8" path="res://Scenes/Managers/EducationManager/QuestionGenerators/QuestionGenerator.tscn" id="1_63ukp"]
+[ext_resource type="Script" path="res://Scenes/Managers/EducationManager/QuestionGenerators/AdditionQuestionGenerators/AdditionDoubleDigitQuestionGenerator/addition_double_digit_question_generator.gd" id="2_11pba"]
+
+[node name="AdditionDoubleDigitQuestionGenerator" instance=ExtResource("1_63ukp")]
+script = ExtResource("2_11pba")

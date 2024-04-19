@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="FishGame"
-run/main_scene="res://Scenes/MainLevel.tscn"
+run/main_scene="res://Scenes/GameScenes/GameEntryPoint/GameEntryPoint.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneSwitcher="*res://Scenes/Managers/SceneSwitcher/SceneSwitcher.tscn"
+EducationManager="*res://Scenes/Managers/EducationManager/EducationManager.tscn"
 
 [dotnet]
 

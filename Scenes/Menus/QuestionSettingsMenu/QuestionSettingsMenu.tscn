@@ -1,0 +1,267 @@
+[gd_scene load_steps=3 format=3 uid="uid://cak7c86ox8ar6"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/QuestionSettingsMenu/question_settings_menu.gd" id="1_qvcka"]
+[ext_resource type="Script" path="res://Scenes/Menus/QuestionSettingsMenu/question_settings_v_box.gd" id="2_d0pfv"]
+
+[node name="QuestionSettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qvcka")
+
+[node name="QuestionSettingsVBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_d0pfv")
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestionSettingsVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Title" type="Label" parent="QuestionSettingsVBox/MarginContainer"]
+layout_mode = 2
+text = "Question Options"
+horizontal_alignment = 1
+
+[node name="QuestionSettingsContainer" type="GridContainer" parent="QuestionSettingsVBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 25
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="AdditionContainer" type="VBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="AdditionLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer"]
+layout_mode = 2
+text = "Addition questions options"
+horizontal_alignment = 1
+
+[node name="AdditionOptionsContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="AdditionSingleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="AdditionSingleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionSingleDigitOptionContainer"]
+layout_mode = 2
+text = "Single digit
+"
+horizontal_alignment = 1
+
+[node name="AdditionSingleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionSingleDigitOptionContainer"]
+layout_mode = 2
+
+[node name="AdditionDoubleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="AdditionDoubleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionDoubleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Double digit
+"
+horizontal_alignment = 1
+
+[node name="AdditionDoubleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionDoubleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SubtractionContainer" type="VBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="SubtractionLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Subtraction questions options"
+horizontal_alignment = 1
+
+[node name="SubtractionOptionsContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="SubtractionSingleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="SubtractionSingleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer/SubtractionSingleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Single digit
+"
+horizontal_alignment = 1
+
+[node name="SubtractionSingleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer/SubtractionSingleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="SubtractionDoubleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="SubtractionDoubleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer/SubtractionDoubleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Double digit
+"
+horizontal_alignment = 1
+
+[node name="SubtractionDoubleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer/SubtractionDoubleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MultiplicationContainer" type="VBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="MultiplicationLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Multiplication questions options"
+horizontal_alignment = 1
+
+[node name="MultiplicationOptionsContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="MultiplicationSingleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="MultiplicationSingleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationSingleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Single digit
+"
+horizontal_alignment = 1
+
+[node name="MultiplicationSingleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationSingleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="MultiplicationDoubleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="MultiplicationDoubleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationDoubleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Double digit
+"
+horizontal_alignment = 1
+
+[node name="MultiplicationDoubleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationDoubleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DivisionContainer" type="VBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="DivisionLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Division questions options"
+horizontal_alignment = 1
+
+[node name="DivisionOptionsContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="DivisionSingleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="DivisionSingleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionSingleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Single digit
+"
+horizontal_alignment = 1
+
+[node name="DivisionSingleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionSingleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="DivisionDoubleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="DivisionDoubleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionDoubleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Double digit
+"
+horizontal_alignment = 1
+
+[node name="DivisionDoubleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionDoubleDigitOptionContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="Save" type="Button" parent="QuestionSettingsVBox"]
+layout_mode = 2
+text = "Save"
+
+[connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionSingleDigitOptionContainer/AdditionSingleDigitCheckBox" to="." method="_on_addition_single_digit_check_box_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionDoubleDigitOptionContainer/AdditionDoubleDigitCheckBox" to="." method="_on_addition_double_digit_check_box_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer/SubtractionSingleDigitOptionContainer/SubtractionSingleDigitCheckBox" to="." method="_on_subtraction_single_digit_check_box_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer/SubtractionDoubleDigitOptionContainer/SubtractionDoubleDigitCheckBox" to="." method="_on_subtraction_double_digit_check_box_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationSingleDigitOptionContainer/MultiplicationSingleDigitCheckBox" to="." method="_on_multiplication_single_digit_check_box_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationDoubleDigitOptionContainer/MultiplicationDoubleDigitCheckBox" to="." method="_on_multiplication_double_digit_check_box_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionSingleDigitOptionContainer/DivisionSingleDigitCheckBox" to="." method="_on_division_single_digit_check_box_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionDoubleDigitOptionContainer/DivisionDoubleDigitCheckBox" to="." method="_on_division_double_digit_check_box_toggled"]
+[connection signal="button_down" from="QuestionSettingsVBox/Save" to="." method="_on_save_button_down"]

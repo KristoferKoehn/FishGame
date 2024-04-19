@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bimxsj3fbjk1k"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_2x2ey"]
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/main_menu_button_box.gd" id="2_016k6"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2x2ey")
+
+[node name="MainMenuButtonBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_016k6")
+
+[node name="Play" type="Button" parent="MainMenuButtonBox"]
+layout_mode = 2
+text = "Play"
+
+[node name="QuestionSettings" type="Button" parent="MainMenuButtonBox"]
+layout_mode = 2
+text = "Question Settings"
+
+[node name="Quit" type="Button" parent="MainMenuButtonBox"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="button_down" from="MainMenuButtonBox/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="MainMenuButtonBox/QuestionSettings" to="." method="_on_question_settings_button_down"]
+[connection signal="button_down" from="MainMenuButtonBox/Quit" to="." method="_on_quit_button_down"]

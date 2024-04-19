@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://27hbk3iyhtik"]
+
+[ext_resource type="Script" path="res://Scenes/Managers/EducationManager/QuestionSettings/question_settings.gd" id="1_onwa0"]
+
+[node name="QuestionSettings" type="Node"]
+script = ExtResource("1_onwa0")
