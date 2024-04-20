@@ -1,55 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://c50psla478wk0"]
+[gd_scene load_steps=3 format=3 uid="uid://c50psla478wk0"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/QuestionMenu/question_menu.gd" id="1_dxhc1"]
 [ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="2_m8b3y"]
-[ext_resource type="Texture2D" uid="uid://chdmo3lp6ewo2" path="res://icon.svg" id="2_yp4xo"]
 
 [node name="QuestionMenu" type="Node2D"]
 script = ExtResource("1_dxhc1")
+
+[node name="Panel2" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -2120.0
+offset_top = -1321.0
+offset_right = 3390.0
+offset_bottom = 2103.0
+mouse_default_cursor_shape = 5
 
 [node name="QuestionUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_m8b3y")
 
-[node name="MarginContainer" type="MarginContainer" parent="QuestionUI"]
+[node name="Panel" type="Panel" parent="QuestionUI"]
+offset_right = 248.0
+offset_bottom = 119.0
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestionUI/Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 247.0
+offset_bottom = 116.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="QuestionUI/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionUI/Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="QuestionPrompt" type="Label" parent="QuestionUI/MarginContainer/VBoxContainer"]
+[node name="QuestionPrompt" type="Label" parent="QuestionUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Multiply the following numbers: "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="QuestionUI/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestionUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="QuestionText" type="Label" parent="QuestionUI/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="QuestionText" type="Label" parent="QuestionUI/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "99 X 99 = "
 
-[node name="LineEdit" type="LineEdit" parent="QuestionUI/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="QuestionUI/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 expand_to_text_length = true
 clear_button_enabled = true
 
-[node name="MarginContainer" type="MarginContainer" parent="QuestionUI/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="QuestionUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 5
 
-[node name="Submit" type="Button" parent="QuestionUI/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Submit" type="Button" parent="QuestionUI/Panel/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 text = "Submit"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_yp4xo")
-
-[connection signal="button_down" from="QuestionUI/MarginContainer/VBoxContainer/MarginContainer/Submit" to="." method="_on_submit_button_down"]
+[connection signal="button_down" from="QuestionUI/Panel/MarginContainer/VBoxContainer/MarginContainer/Submit" to="." method="_on_submit_button_down"]

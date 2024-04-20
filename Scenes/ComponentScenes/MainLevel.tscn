@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://qp3eutfsgqpv"]
+[gd_scene load_steps=18 format=3 uid="uid://qp3eutfsgqpv"]
 
 [ext_resource type="PackedScene" uid="uid://ccg6n8vqk8b27" path="res://Assets/Scene/WaterPlane.tscn" id="3_bagau"]
 [ext_resource type="PackedScene" uid="uid://bjjceeyq3csc3" path="res://Assets/Scene/DayNightCycle/Skybox.tscn" id="4_kewmy"]
+[ext_resource type="PackedScene" uid="uid://csd4qe34wtrt" path="res://Assets/3D/Scenery/fbx/SM_Tree_Large_01.fbx" id="6_vrdsj"]
+[ext_resource type="PackedScene" uid="uid://btpdpe6qunryb" path="res://Assets/3D/Scenery/fbx/SM_Tree_Willow_Large_01.fbx" id="7_mcl71"]
 [ext_resource type="Material" uid="uid://bdy4x4s2dbrdl" path="res://Assets/3D/Scenery/SharedMaterials/DockMaterial.tres" id="9_kxl0l"]
 [ext_resource type="ArrayMesh" uid="uid://cv6bx4pn7wqt6" path="res://Assets/3D/Props/SM_Prop_Dock_01.obj" id="10_xmaiw"]
 [ext_resource type="PackedScene" uid="uid://clxt0py6nf2d8" path="res://Assets/3D/LakeGroundGeometry.glb" id="11_ktrch"]
@@ -44,7 +46,7 @@ size = Vector3(1, 2.89404, 23.6018)
 transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 46.1376, -0.2, 7.32626)
 
 [node name="Main" parent="." instance=ExtResource("4_kewmy")]
-day_time = 10.72
+day_time = 7.6752
 clouds_cutoff = 0.5
 sun_base_enegry = 0.7
 
@@ -153,5 +155,11 @@ shape = SubResource("BoxShape3D_aabes")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingCollision/StaticBody3D4"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.43519, 0.947021, -0.419629)
 shape = SubResource("BoxShape3D_vr5nj")
+
+[node name="SM_Tree_Large_01" parent="." instance=ExtResource("6_vrdsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.31815, -0.000656605, -6.7377)
+
+[node name="SM_Tree_Willow_Large_01" parent="." instance=ExtResource("7_mcl71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92744, -0.000653505, 10.3121)
 
 [editable path="LakeGroundGeometry"]

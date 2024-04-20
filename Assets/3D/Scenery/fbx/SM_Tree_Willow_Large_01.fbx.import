@@ -34,11 +34,11 @@ _subresources={
 "materials": {
 "Leave": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/resources/Leaves_3.tres"
+"use_external/path": "res://Assets/3D/Scenery/SharedMaterials/Leaves_1.tres"
 },
 "Trunk": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/resources/nature_01_material.tres"
+"use_external/path": "res://Assets/3D/Scenery/SharedMaterials/Nature2.tres"
 }
 }
 }

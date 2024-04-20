@@ -12,11 +12,14 @@ func _process(delta: float) -> void:
 	$Panel/HBoxContainer/MarginContainer4/HBoxContainer/PearlCount.text = str(CurrencyManager.pearls)
 	pass
 
-
 func getReward(success: bool) -> void:
 	if success:
-		CurrencyManager.gold += 1
-
+		CurrencyManager.worms += 3
+	$Panel/HBoxContainer/GetQuestion.disabled = false
+	CurrencyManager.save_data()
 
 func _on_get_question_button_down() -> void:
-	EducationManager.generateQuestionScene()
+	$Panel/HBoxContainer/GetQuestion.disabled = true
+	var scene : Node = SceneSwitcher.instantiateScene("res://Scenes/Menus/QuestionMenu/QuestionMenu.tscn")
+	add_child(scene)
+	#EducationManager.generateQuestionScene()
