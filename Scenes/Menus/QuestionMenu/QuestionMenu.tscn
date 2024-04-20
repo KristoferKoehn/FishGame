@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c50psla478wk0"]
+[gd_scene load_steps=4 format=3 uid="uid://c50psla478wk0"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/QuestionMenu/question_menu.gd" id="1_dxhc1"]
-[ext_resource type="Texture2D" uid="uid://bow5bdn24cfs7" path="res://icon.svg" id="2_yp4xo"]
+[ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="2_m8b3y"]
+[ext_resource type="Texture2D" uid="uid://chdmo3lp6ewo2" path="res://icon.svg" id="2_yp4xo"]
 
 [node name="QuestionMenu" type="Node2D"]
 script = ExtResource("1_dxhc1")
@@ -9,6 +10,7 @@ script = ExtResource("1_dxhc1")
 [node name="QuestionUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("2_m8b3y")
 
 [node name="MarginContainer" type="MarginContainer" parent="QuestionUI"]
 layout_mode = 0

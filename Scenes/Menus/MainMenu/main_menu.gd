@@ -1,7 +1,7 @@
 extends Control
 
 func _on_play_button_down() -> void:
-	SceneSwitcher.instantiateAndPushScene("res://Scenes/GameScenes/PrimaryGameScene/MainLevel.tscn")
+	SceneSwitcher.instantiateAndPushScene("res://Scenes/GameScenes/PrimaryGameScene/PrimaryGameScene.tscn")
 
 func _on_question_settings_button_down() -> void:
 	SceneSwitcher.instantiateAndPushScene("res://Scenes/Menus/QuestionSettingsMenu/QuestionSettingsMenu.tscn")
