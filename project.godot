@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 SceneSwitcher="*res://Scenes/Managers/SceneSwitcher/SceneSwitcher.tscn"
 EducationManager="*res://Scenes/Managers/EducationManager/EducationManager.tscn"
+CurrencyManager="*res://Scenes/Managers/CurrencyManager/CurrencyManager.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [dotnet]
 

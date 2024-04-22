@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cv4o7t67ko538"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/RaindbowTest.gdshader" id="1_fn66y"]
+
+[sub_resource type="Gradient" id="Gradient_nep8f"]
+offsets = PackedFloat32Array(0.132979, 0.329787, 0.521277)
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7onia"]
+gradient = SubResource("Gradient_nep8f")
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_fn66y")
+shader_parameter/cycle_interval = 5.0
+shader_parameter/shine_speed = 1.0
+shader_parameter/shine_width = 45.0
+shader_parameter/grad = SubResource("GradientTexture1D_7onia")

@@ -1,0 +1,264 @@
+[gd_scene load_steps=20 format=3 uid="uid://pvhab1atl23y"]
+
+[ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="1_0pg4o"]
+[ext_resource type="Script" path="res://Scenes/Utility/ui.gd" id="1_xygrs"]
+[ext_resource type="Material" uid="uid://bcqgv15c8on0" path="res://Assets/Shaders/ExoticShaderResource.tres" id="3_1d763"]
+[ext_resource type="Material" uid="uid://cv4o7t67ko538" path="res://Assets/Shaders/ShineResource.tres" id="4_1n7qf"]
+[ext_resource type="Script" path="res://Scenes/Utility/CoinScript.gd" id="4_isorw"]
+[ext_resource type="Environment" uid="uid://bkw1wch2q1tmq" path="res://Scenes/Utility/WorldEnvironment.tres" id="7_6g8t4"]
+
+[sub_resource type="World3D" id="World3D_478h2"]
+environment = ExtResource("7_6g8t4")
+
+[sub_resource type="Shader" id="Shader_1qhuy"]
+code = "shader_type spatial;
+
+uniform vec4 color : source_color;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+	VERTEX.z += sin(TIME * 1.2 + VERTEX.y) * 1.2;
+}
+
+void fragment() {
+	ALBEDO = color.rgb;
+	ALPHA = color.a;
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the material.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kr3mt"]
+render_priority = 0
+shader = SubResource("Shader_1qhuy")
+shader_parameter/color = Color(1, 0.545098, 0.670588, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kiijg"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_kr3mt")
+radius = 0.3
+height = 3.0
+
+[sub_resource type="Shader" id="Shader_sth7q"]
+code = "shader_type spatial;
+
+uniform vec4 color : source_color;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+	VERTEX.z += sin(TIME * 1.2 + VERTEX.y) * 1.2;
+}
+
+void fragment() {
+	ALBEDO = color.rgb;
+	ALPHA = color.a;
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the material.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxd47"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_sth7q")
+shader_parameter/color = Color(0, 0.52549, 0.862745, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_flvve"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_fxd47")
+radius = 0.3
+height = 3.0
+
+[sub_resource type="World3D" id="World3D_bl0b1"]
+environment = ExtResource("7_6g8t4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3iwpd"]
+next_pass = ExtResource("4_1n7qf")
+shading_mode = 2
+albedo_color = Color(1, 1, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r8il6"]
+material = SubResource("StandardMaterial3D_3iwpd")
+height = 0.1
+
+[sub_resource type="World3D" id="World3D_weo6h"]
+environment = ExtResource("7_6g8t4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0in8"]
+next_pass = ExtResource("3_1d763")
+metallic = 1.0
+metallic_specular = 0.96
+clearcoat_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_gr5dp"]
+material = SubResource("StandardMaterial3D_d0in8")
+
+[node name="UI" type="Control"]
+auto_translate_mode = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_0pg4o")
+script = ExtResource("1_xygrs")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+auto_translate_mode = 1
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 40.0
+
+[node name="GetQuestion" type="Button" parent="Panel/HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Get Question"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel/HBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Panel/HBoxContainer/MarginContainer/HBoxContainer/SubViewportContainer"]
+own_world_3d = true
+world_3d = SubResource("World3D_478h2")
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(40, 40)
+render_target_update_mode = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer/HBoxContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.862514, -0.420997, 0.28077, 0, 0.554844, 0.831954, -0.506034, -0.717572, 0.478561, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_kiijg")
+skeleton = NodePath("../../../../../../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Panel/HBoxContainer/MarginContainer/HBoxContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.201078, 0, 0.979575, 0, 1, 0, -0.979575, 0, 0.201078, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Panel/HBoxContainer/MarginContainer/HBoxContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.175367, 0, 0.984503, 0, 1, 0, -0.984503, 0, -0.175367, 4, 0, 0)
+current = true
+fov = 62.1
+
+[node name="WormCount" type="Label" parent="Panel/HBoxContainer/MarginContainer/HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="Panel/HBoxContainer/MarginContainer2/HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Panel/HBoxContainer/MarginContainer2/HBoxContainer/SubViewportContainer2"]
+own_world_3d = true
+world_3d = SubResource("World3D_478h2")
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(40, 40)
+render_target_update_mode = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer2/HBoxContainer/SubViewportContainer2/SubViewport"]
+transform = Transform3D(0.862514, -0.420997, 0.28077, 0, 0.554844, 0.831954, -0.506034, -0.717572, 0.478561, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_flvve")
+skeleton = NodePath("../../../../../../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Panel/HBoxContainer/MarginContainer2/HBoxContainer/SubViewportContainer2/SubViewport"]
+transform = Transform3D(0.201078, 0, 0.979575, 0, 1, 0, -0.979575, 0, 0.201078, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Panel/HBoxContainer/MarginContainer2/HBoxContainer/SubViewportContainer2/SubViewport"]
+transform = Transform3D(-0.175367, 0, 0.984503, 0, 1, 0, -0.984503, 0, -0.175367, 4, 0, 0)
+
+[node name="SuperWormCount" type="Label" parent="Panel/HBoxContainer/MarginContainer2/HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer"]
+own_world_3d = true
+world_3d = SubResource("World3D_bl0b1")
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(40, 40)
+render_target_update_mode = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(-3.6592e-08, -0.837162, 0.509698, 1, -4.37114e-08, -9.06002e-15, 2.22808e-08, 0.509698, 0.837162, 0, 0, 0)
+mesh = SubResource("CylinderMesh_r8il6")
+script = ExtResource("4_isorw")
+
+[node name="Camera3D" type="Camera3D" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.5)
+fov = 15.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer/SubViewport"]
+
+[node name="GoldCount" type="Label" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/MarginContainer4"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel/HBoxContainer/MarginContainer4/HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Panel/HBoxContainer/MarginContainer4/HBoxContainer/SubViewportContainer"]
+own_world_3d = true
+world_3d = SubResource("World3D_weo6h")
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(40, 40)
+render_target_update_mode = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer4/HBoxContainer/SubViewportContainer/SubViewport"]
+mesh = SubResource("SphereMesh_gr5dp")
+skeleton = NodePath("../../../../../../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Panel/HBoxContainer/MarginContainer4/HBoxContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.772734, -0.455045, 0.442512, 0, 0.697165, 0.716911, -0.634731, 0.553981, -0.538723, 6.63616, 0.923618, 2.65822)
+
+[node name="Camera3D" type="Camera3D" parent="Panel/HBoxContainer/MarginContainer4/HBoxContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 0)
+
+[node name="PearlCount" type="Label" parent="Panel/HBoxContainer/MarginContainer4/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[connection signal="button_down" from="Panel/HBoxContainer/GetQuestion" to="." method="_on_get_question_button_down"]
