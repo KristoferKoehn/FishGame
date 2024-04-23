@@ -21,6 +21,7 @@ anchors_preset = 0
 theme = ExtResource("2_m8b3y")
 
 [node name="Panel" type="Panel" parent="QuestionUI"]
+layout_mode = 0
 offset_right = 248.0
 offset_bottom = 119.0
 
