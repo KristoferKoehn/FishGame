@@ -14,8 +14,14 @@ var InputLockout : bool = false
 
 func _ready() -> void:
 	camera = get_node("../Camera3D") as Camera3D
+	$CameraAttachPoint.global_position = global_position + Vector3(-10, 4, 0)
+
+
+func _process(_delta):
+	pass
 
 func _physics_process(delta: float) -> void:
+	$CameraAttachPoint.global_position = global_position + Vector3(-10, 4, 0)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -44,6 +50,7 @@ func _input(event):
 			ContextNode.player_locked = true
 			tween_to_node()
 			InputLockout = true;
+			ContextNode.interacted()
 
 func tween_to_node() -> void:
 	var tween = get_tree().create_tween()

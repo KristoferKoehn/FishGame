@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qp3eutfsgqpv" path="res://Scenes/ComponentScenes/MainLevel.tscn" id="1_po8m0"]
 [ext_resource type="PackedScene" uid="uid://dthxavwwq2uvk" path="res://Scenes/CharacterScenes/rogue.tscn" id="2_6fhvn"]
-[ext_resource type="PackedScene" path="res://Scenes/Utility/camera_3d.tscn" id="3_mdb2e"]
+[ext_resource type="PackedScene" uid="uid://c4r5ru5mve0b0" path="res://Scenes/Utility/camera_3d.tscn" id="3_mdb2e"]
 [ext_resource type="PackedScene" uid="uid://doyisa4ue0s8s" path="res://Scenes/Utility/FishingArea.tscn" id="4_gprvy"]
 [ext_resource type="PackedScene" uid="uid://pvhab1atl23y" path="res://Scenes/Utility/ui.tscn" id="5_p0sbi"]
 [ext_resource type="AudioStream" uid="uid://n36plwybru7y" path="res://Assets/Sound/Track1/DayTime.wav" id="6_t08ee"]

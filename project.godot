@@ -20,10 +20,12 @@ config/icon="res://icon.svg"
 SceneSwitcher="*res://Scenes/Managers/SceneSwitcher/SceneSwitcher.tscn"
 EducationManager="*res://Scenes/Managers/EducationManager/EducationManager.tscn"
 CurrencyManager="*res://Scenes/Managers/CurrencyManager/CurrencyManager.tscn"
+CameraManager="*res://Scenes/Managers/CameraManager/CameraManager.tscn"
 
 [display]
 
 window/stretch/mode="viewport"
+window/vsync/vsync_mode=2
 
 [dotnet]
 

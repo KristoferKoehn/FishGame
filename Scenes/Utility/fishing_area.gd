@@ -14,11 +14,11 @@ func _on_area_3d_body_entered(_body:Node3D) -> void:
 	player = _body
 	if current_floating == null:
 		current_floating = floating_text.instantiate()
-		
 		current_floating.text = "Press E to Fish";
 		current_floating.position = text_point.position
 		add_child(current_floating)
 		_body.ContextNode = self
+
 func _on_area_3d_body_exited(_body:Node3D) -> void:
 	if _body.name != "Rogue": return
 	player = null
@@ -26,10 +26,15 @@ func _on_area_3d_body_exited(_body:Node3D) -> void:
 		current_floating.queue_free()
 		current_floating = null;
 		_body.ContextNode = null
+		
 
 func _input(event):
-
 	if event.is_action_pressed("escape"):
 		if player_locked && player != null:
 			player.InputLockout = false
 			player_locked = false
+			CameraManager.default_view()
+
+func interacted() -> void:
+	CameraManager.assign_follow_point(get_node("CameraView"))
+	

@@ -5,7 +5,7 @@ func _ready() -> void:
 	EducationManager.questionCompleted.connect(getReward)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Panel/HBoxContainer/MarginContainer/HBoxContainer/WormCount.text = str(CurrencyManager.worms)
 	$Panel/HBoxContainer/MarginContainer2/HBoxContainer/SuperWormCount.text = str(CurrencyManager.superworms)
 	$Panel/HBoxContainer/MarginContainer3/HBoxContainer/GoldCount.text = str(CurrencyManager.gold)
@@ -22,4 +22,9 @@ func _on_get_question_button_down() -> void:
 	$Panel/HBoxContainer/GetQuestion.disabled = true
 	var scene : Node = SceneSwitcher.instantiateScene("res://Scenes/Menus/QuestionMenu/QuestionMenu.tscn")
 	add_child(scene)
-	#EducationManager.generateQuestionScene()
+
+func start_fishing_game() -> void:
+	pass
+
+func get_fishing_reward() -> void:
+	pass
