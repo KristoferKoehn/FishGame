@@ -128,7 +128,7 @@ scale = Vector2(3.885, 3.885)
 sprite_frames = SubResource("SpriteFrames_yi54d")
 animation = &"Swim"
 autoplay = "Swim"
-frame_progress = 0.751521
+frame_progress = 0.560707
 speed_scale = 2.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	if time >= timeLimit:
 		# Mission Failed
 		fishCaught.emit(false)
-		#queue_free()
+		queue_free()
 	
 	var distance = abs(hook.global_position - fish.global_position).length()
 	if distance < distanceCutoff:
@@ -31,4 +31,4 @@ func _process(delta: float) -> void:
 	if successTime >= successTimeLimit:
 		# successful catch
 		fishCaught.emit(true)
-		#queue_free()
+		queue_free()
