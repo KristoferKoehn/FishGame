@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgxfdxp5e2h36"]
+[gd_scene load_steps=17 format=3 uid="uid://cgxfdxp5e2h36"]
 
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/fishing_mini_game.gd" id="1_elcsc"]
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/character_body_2d.gd" id="2_423i4"]
 [ext_resource type="Texture2D" uid="uid://bgjaif14ndam2" path="res://Assets/2D/FishHook.png" id="3_1cpeu"]
-[ext_resource type="Texture2D" uid="uid://chdmo3lp6ewo2" path="res://icon.svg" id="3_cltva"]
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/fish.gd" id="4_axm5v"]
+[ext_resource type="Texture2D" uid="uid://n07y7q0u0vit" path="res://Assets/2D/hai-fin-shadow.png" id="5_i455m"]
+[ext_resource type="Shader" path="res://Assets/Shaders/WindWaker.gdshader" id="6_x2wsp"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k5f8b"]
 
@@ -14,6 +15,53 @@ radius = 56.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wei8y"]
 radius = 60.0
 height = 442.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpttc"]
+atlas = ExtResource("5_i455m")
+region = Rect2(0, 423, 148, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upgrd"]
+atlas = ExtResource("5_i455m")
+region = Rect2(148, 423, 148, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fexa7"]
+atlas = ExtResource("5_i455m")
+region = Rect2(296, 423, 148, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47fq3"]
+atlas = ExtResource("5_i455m")
+region = Rect2(444, 423, 148, 141)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yi54d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpttc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upgrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fexa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47fq3")
+}],
+"loop": true,
+"name": &"Swim",
+"speed": 4.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2bwaa"]
+shader = ExtResource("6_x2wsp")
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(0.3, 0.3)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_l5w3y"]
 
 [node name="FishingMiniGame" type="Node2D"]
 script = ExtResource("1_elcsc")
@@ -70,11 +118,24 @@ collision_layer = 2
 script = ExtResource("4_axm5v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
+position = Vector2(-93, -3)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_wei8y")
 
-[node name="Sprite2D" type="Sprite2D" parent="Fish"]
-position = Vector2(3.8147e-06, 2.49998)
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Fish"]
 rotation = -1.5708
-scale = Vector2(1, 3.5)
-texture = ExtResource("3_cltva")
+scale = Vector2(3.885, 3.885)
+sprite_frames = SubResource("SpriteFrames_yi54d")
+animation = &"Swim"
+autoplay = "Swim"
+frame_progress = 0.751521
+speed_scale = 2.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_2bwaa")
+position = Vector2(960, 540)
+scale = Vector2(1920, 1080)
+texture = SubResource("PlaceholderTexture2D_l5w3y")
