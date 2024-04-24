@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://bf1kogf4c4giv"]
+
+[ext_resource type="PackedScene" uid="uid://n1il66lu03gd" path="res://Assets/3D/CharacterModelsglb/PrototypePete.glb" id="1_gn7q3"]
+[ext_resource type="PackedScene" uid="uid://c0mc8d0w4yhc7" path="res://Assets/3D/DungeonProps/banner_yellow.gltf.glb" id="1_qxxmm"]
+[ext_resource type="PackedScene" uid="uid://bbe568bmay07q" path="res://Assets/3D/DungeonProps/table_long.gltf.glb" id="2_i1bdc"]
+[ext_resource type="PackedScene" uid="uid://dd4wajqtyx3bk" path="res://Assets/3D/DungeonProps/crates_stacked.gltf.glb" id="4_ow0k0"]
+[ext_resource type="PackedScene" uid="uid://b2ulfpmrccat7" path="res://Assets/3D/DungeonProps/coin_stack_small.gltf.glb" id="5_g3r6y"]
+[ext_resource type="PackedScene" uid="uid://ct5t3rrcvm7e2" path="res://Assets/3D/DungeonProps/box_stacked.gltf.glb" id="6_q474s"]
+[ext_resource type="PackedScene" uid="uid://bvt5rq3mjs64i" path="res://Assets/3D/DungeonProps/wall_open_scaffold.gltf.glb" id="7_wsvie"]
+[ext_resource type="PackedScene" uid="uid://d0qapbhi5xrky" path="res://Assets/3D/Furniture/monitor.gltf" id="8_8liea"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hb4oq"]
+size = Vector2(1.4, 0.8)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cx7b5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mglm"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_cx7b5")
+
+[node name="ShopVisual" type="Node3D"]
+
+[node name="banner_yellow_gltf" parent="." instance=ExtResource("1_qxxmm")]
+transform = Transform3D(-3.04604e-08, 1.09833, -0.204478, 1.11017e-07, 0.301356, 0.745248, 2.63364, -6.9875e-16, -3.37798e-08, -1.92815, 2.6779, -0.0470364)
+
+[node name="PrototypePete" parent="." instance=ExtResource("1_gn7q3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.03716, 2.38419e-07, -1.04149)
+
+[node name="table_long_gltf" parent="." instance=ExtResource("2_i1bdc")]
+transform = Transform3D(0.713488, 0, 0, 0, 1, 0, 0, 0, 1, -0.330447, -2.38419e-07, -0.0390053)
+
+[node name="crates_stacked_gltf" parent="." instance=ExtResource("4_ow0k0")]
+transform = Transform3D(0.873484, 0, 0.486854, 0, 1, 0, -0.486854, 0, 0.873484, 0.559156, 0, -2.76327)
+
+[node name="coin_stack_small_gltf" parent="." instance=ExtResource("5_g3r6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32934, 0, 1.14573)
+
+[node name="box_stacked_gltf" parent="." instance=ExtResource("6_q474s")]
+transform = Transform3D(0.901402, 0, 0.432983, 0, 1, 0, -0.432983, 0, 0.901402, 1.60016, 0, 2.78886)
+
+[node name="wall_open_scaffold_gltf" parent="." instance=ExtResource("7_wsvie")]
+transform = Transform3D(-4.15386e-08, 0, -0.0761637, 0, 0.574995, 0, 0.950292, 0, -3.32922e-09, -1.03914, 0.963542, -0.0462639)
+
+[node name="wall_open_scaffold_gltf2" parent="." instance=ExtResource("7_wsvie")]
+transform = Transform3D(-4.37114e-08, 0, -0.208734, 0, 1, 0, 1, 0, -9.12405e-09, 1.79056, 0, -0.111887)
+
+[node name="Screen" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.158393, 0.16876, -0.972847, 0.016335, 0.984702, 0.173476, 0.987241, -0.0433689, 0.153213, -0.580906, 1.64841, 1.01224)
+mesh = SubResource("QuadMesh_hb4oq")
+skeleton = NodePath("../monitor")
+surface_material_override/0 = SubResource("StandardMaterial3D_5mglm")
+
+[node name="monitor" parent="." instance=ExtResource("8_8liea")]
+transform = Transform3D(0.158796, 0, -0.987311, 0, 1, 0, 0.987311, 0, 0.158796, -0.438948, 0.98639, 1.00742)

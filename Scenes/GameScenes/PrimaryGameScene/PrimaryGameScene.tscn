@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjo3j8ugpjlpn"]
+[gd_scene load_steps=11 format=3 uid="uid://cjo3j8ugpjlpn"]
 
 [ext_resource type="PackedScene" uid="uid://qp3eutfsgqpv" path="res://Scenes/ComponentScenes/MainLevel.tscn" id="1_po8m0"]
 [ext_resource type="PackedScene" uid="uid://dthxavwwq2uvk" path="res://Scenes/CharacterScenes/rogue.tscn" id="2_6fhvn"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://n36plwybru7y" path="res://Assets/Sound/Track1/DayTime.wav" id="6_t08ee"]
 [ext_resource type="AudioStream" uid="uid://dnvmyeeplk6j2" path="res://Assets/Sound/Track1/LowSunTime.wav" id="7_gcbqx"]
 [ext_resource type="AudioStream" uid="uid://bhu8l5a1onxjs" path="res://Assets/Sound/Track1/NightTime.wav" id="8_wr27q"]
+[ext_resource type="PackedScene" uid="uid://bp7slo7357n34" path="res://Scenes/Utility/ShopArea.tscn" id="9_2w31s"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i85r6"]
 streams_count = 3
@@ -35,3 +36,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.397
 stream = SubResource("AudioStreamRandomizer_i85r6")
 autoplay = true
 bus = &"Music"
+
+[node name="ShopArea" parent="." instance=ExtResource("9_2w31s")]
+transform = Transform3D(-0.619628, 0, -0.784895, 0, 1, 0, 0.784895, 0, -0.619628, -5.91844, 0.501692, 14.0862)

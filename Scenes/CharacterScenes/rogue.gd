@@ -9,7 +9,7 @@ const TURN_SPEED = 10
 const locomotionBlendPositionVector = Vector2.ZERO
 const locomotionBlendPositionSpeed = 3.5
 
-var ContextNode : FishingArea = null
+var ContextNode = null
 var InputLockout : bool = false
 
 func _ready() -> void:
