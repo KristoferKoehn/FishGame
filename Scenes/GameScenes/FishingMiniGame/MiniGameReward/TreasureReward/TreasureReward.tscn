@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwmqw1na65rbf"]
 
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/MiniGameReward/TreasureReward/v_box_container.gd" id="1_3iwlm"]
-[ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/MiniGameReward/TreasureReward/treausre_reward.gd" id="1_yf776"]
+[ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/MiniGameReward/TreasureReward/treasure_reward.gd" id="1_yf776"]
 [ext_resource type="Texture2D" uid="uid://t2sy43nmob0k" path="res://Assets/2D/TreasureChest.png" id="2_1clvj"]
 
-[node name="TresureReward" type="Control"]
+[node name="TreasureReward" type="Control"]
 auto_translate_mode = 1
 layout_mode = 3
 anchors_preset = 0
@@ -15,6 +15,12 @@ layout_mode = 0
 offset_right = 1284.0
 offset_bottom = 879.0
 script = ExtResource("1_3iwlm")
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "You fished up treasure!"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 auto_translate_mode = 1
