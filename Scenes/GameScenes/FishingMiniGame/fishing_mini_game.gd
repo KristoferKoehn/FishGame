@@ -4,13 +4,11 @@ var fish = null
 var hook = null
 var time = 0
 var timeLimit = 20
-signal fishCaught(success: bool)
 var distanceCutoff = 200
-var successTimeLimit = 5
 var successTime = 0
+var successTimeLimit = 5
 var catchBar = null
 var countDown = null
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,8 +25,8 @@ func _process(delta: float) -> void:
 	
 	if time >= timeLimit: # TODO: Offer retry
 		# Mission Failed
-		fishCaught.emit(false)
-		queue_free()
+		# SceneSwitcher.replaceSelfOnParent(self, catchFailedScene)
+		pass
 	
 	var distance = abs(hook.global_position - fish.global_position).length()
 	if distance < distanceCutoff:
@@ -37,5 +35,12 @@ func _process(delta: float) -> void:
 	
 	if successTime >= successTimeLimit:
 		# successful catch
-		fishCaught.emit(true)
-		queue_free()
+		var roll = randf()
+		if roll <= CurrencyManager.chanceOfChest:
+			SceneSwitcher.replaceSelfOnParent(self, "res://Scenes/GameScenes/FishingMiniGame/MiniGameReward/TreasureReward/TreausreReward.tscn")
+			pass
+		else:
+			SceneSwitcher.replaceSelfOnParent(self, "res://Scenes/GameScenes/FishingMiniGame/MiniGameReward/FishReward/FishReward.tscn")
+			pass
+
+

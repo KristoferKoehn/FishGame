@@ -42,3 +42,9 @@ func instantiateAndPushScene(scenePath: String) -> void:
 func instantiateAndSwitchToScene(scenePath: String) -> void:
 	var sceneInstance = instantiateScene(scenePath)
 	switchScene(sceneInstance)
+
+func replaceSelfOnParent(currentNode: Node, sceneString: String) -> void:
+	var newScene: Node = SceneSwitcher.instantiateScene(sceneString)
+	var parent = currentNode.get_parent()
+	parent.add_child(newScene)
+	currentNode.queue_free()

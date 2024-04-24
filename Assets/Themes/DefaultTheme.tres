@@ -28,10 +28,11 @@ corner_detail = 6
 
 [resource]
 default_font = ExtResource("1_i4k0i")
-Button/font_sizes/font_size = 24
+Button/font_sizes/font_size = 16
+Label/font_sizes/font_size = 16
 ProgressBar/colors/font_color = Color(1, 1, 1, 1)
 ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
 ProgressBar/constants/outline_size = 0
-ProgressBar/font_sizes/font_size = 24
+ProgressBar/font_sizes/font_size = 16
 ProgressBar/styles/background = SubResource("StyleBoxFlat_w236l")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_x144o")

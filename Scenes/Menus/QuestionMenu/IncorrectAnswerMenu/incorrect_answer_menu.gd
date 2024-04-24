@@ -9,5 +9,4 @@ func _on_retry_button_down() -> void:
 
 func _on_quit_button_down() -> void:
 	EducationManager.completeQuestion(false)
-	queue_free()
-	#SceneSwitcher.popScene()
+	$".".get_parent().get_parent().get_parent().get_parent().get_parent().queue_free() # There is for sure a better way to do this

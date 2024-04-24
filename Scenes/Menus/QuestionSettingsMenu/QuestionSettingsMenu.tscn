@@ -9,8 +9,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1152.0
-offset_bottom = -648.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_c7q58")
@@ -18,8 +18,8 @@ script = ExtResource("1_qvcka")
 
 [node name="QuestionSettingsVBox" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 518.0
+offset_bottom = 212.0
 script = ExtResource("2_d0pfv")
 
 [node name="MarginContainer" type="MarginContainer" parent="QuestionSettingsVBox"]
@@ -70,6 +70,8 @@ horizontal_alignment = 1
 
 [node name="AdditionSingleDigitCheckBox" type="CheckBox" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionSingleDigitOptionContainer"]
 layout_mode = 2
+theme_override_constants/icon_max_width = 48
+expand_icon = true
 
 [node name="AdditionDoubleDigitOptionContainer" type="HBoxContainer" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer"]
 auto_translate_mode = 1
