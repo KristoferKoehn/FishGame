@@ -33,8 +33,10 @@ func _input(event):
 		if player_locked && player != null:
 			player.InputLockout = false
 			player_locked = false
+			current_floating.visible = true
 			CameraManager.default_view()
 
 func interacted() -> void:
+	current_floating.visible = false
 	CameraManager.assign_follow_point(get_node("CameraView"))
 	

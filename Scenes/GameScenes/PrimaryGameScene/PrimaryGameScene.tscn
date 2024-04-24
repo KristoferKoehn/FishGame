@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://n36plwybru7y" path="res://Assets/Sound/Track1/DayTime.wav" id="6_t08ee"]
 [ext_resource type="AudioStream" uid="uid://dnvmyeeplk6j2" path="res://Assets/Sound/Track1/LowSunTime.wav" id="7_gcbqx"]
 [ext_resource type="AudioStream" uid="uid://bhu8l5a1onxjs" path="res://Assets/Sound/Track1/NightTime.wav" id="8_wr27q"]
-[ext_resource type="PackedScene" uid="uid://bp7slo7357n34" path="res://Scenes/Utility/ShopArea.tscn" id="9_2w31s"]
+[ext_resource type="PackedScene" uid="uid://ch87850sacgx1" path="res://Scenes/Utility/ShopScene.tscn" id="9_go6cp"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i85r6"]
 streams_count = 3
@@ -37,5 +37,5 @@ stream = SubResource("AudioStreamRandomizer_i85r6")
 autoplay = true
 bus = &"Music"
 
-[node name="ShopArea" parent="." instance=ExtResource("9_2w31s")]
-transform = Transform3D(-0.619628, 0, -0.784895, 0, 1, 0, 0.784895, 0, -0.619628, -5.91844, 0.501692, 14.0862)
+[node name="ShopScene" parent="." instance=ExtResource("9_go6cp")]
+transform = Transform3D(0.483068, 0, -0.875583, 0, 1, 0, 0.875583, 0, 0.483068, -5.87358, 0, 15.1695)

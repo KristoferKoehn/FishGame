@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://f2lcodjcn7b4"]
+
+[ext_resource type="Script" path="res://Scenes/Managers/CustomizationManager/customization_manager.gd" id="1_8va4e"]
+
+[node name="CustomizationManager" type="Node"]
+script = ExtResource("1_8va4e")
