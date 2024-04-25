@@ -128,7 +128,7 @@ scale = Vector2(3.885, 3.885)
 sprite_frames = SubResource("SpriteFrames_yi54d")
 animation = &"Swim"
 autoplay = "Swim"
-frame_progress = 0.560707
+frame_progress = 0.404464
 speed_scale = 2.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -139,3 +139,22 @@ material = SubResource("ShaderMaterial_2bwaa")
 position = Vector2(960, 540)
 scale = Vector2(1920, 1080)
 texture = SubResource("PlaceholderTexture2D_l5w3y")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 1770.0
+offset_top = 100.0
+offset_right = 1820.0
+offset_bottom = 980.0
+max_value = 1.0
+fill_mode = 3
+
+[node name="CountDown" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 0)
+offset_left = 1770.0
+offset_top = 50.0
+offset_right = 1810.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "10"
+horizontal_alignment = 1

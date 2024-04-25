@@ -11,22 +11,26 @@ theme = ExtResource("1_vh1ed")
 script = ExtResource("1_2x2ey")
 
 [node name="MainMenuButtonBox" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 0
-offset_right = 386.0
-offset_bottom = 95.0
+offset_right = 197.0
+offset_bottom = 119.0
 alignment = 1
 script = ExtResource("2_016k6")
 
 [node name="Play" type="Button" parent="MainMenuButtonBox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Play"
 
 [node name="QuestionSettings" type="Button" parent="MainMenuButtonBox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Question Settings"
 
 [node name="Quit" type="Button" parent="MainMenuButtonBox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Quit"
 
 [connection signal="button_down" from="MainMenuButtonBox/Play" to="." method="_on_play_button_down"]

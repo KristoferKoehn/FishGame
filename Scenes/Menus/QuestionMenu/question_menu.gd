@@ -25,8 +25,9 @@ func _on_submit_button_down() -> void:
 		if $QuestionUI/Panel/MarginContainer/VBoxContainer.get_node_or_null("IncorrectAnswerMenu") != null:
 			pass
 		else:
-			var incorrectAnswerMenu = load("res://Scenes/Menus/QuestionMenu/IncorrectAnswerMenu/IncorrectAnswerMenu.tscn").instantiate()
+			var incorrectAnswerMenu: Node = load("res://Scenes/Menus/QuestionMenu/IncorrectAnswerMenu/IncorrectAnswerMenu.tscn").instantiate()
 			$QuestionUI/Panel/MarginContainer/VBoxContainer.add_child(incorrectAnswerMenu)
+			$QuestionUI/Panel.size.y = $QuestionUI/Panel.size.y + incorrectAnswerMenu.find_child("MarginContainer").size.y
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):

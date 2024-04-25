@@ -5,6 +5,10 @@ var gold: int = 0
 var superworms: int = 0
 var pearls: int = 0
 
+# Data for rewards
+var chanceOfChest = 1/20
+var expectedFishValue = 1111
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

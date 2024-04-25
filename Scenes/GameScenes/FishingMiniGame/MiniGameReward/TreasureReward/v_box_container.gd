@@ -4,6 +4,6 @@ extends VBoxContainer
 func _ready() -> void:
 	pivot_offset = size / 2
 	var center = get_viewport_rect().size / 2.
-	var scaleValue = (center.x) / size.x
+	var scaleValue = (get_viewport_rect().size.x / 1.5) / size.x
 	scale = Vector2(scaleValue,scaleValue)
 	position = center - (size / 2)
