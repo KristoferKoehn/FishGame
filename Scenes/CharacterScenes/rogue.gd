@@ -15,6 +15,7 @@ var InputLockout : bool = false
 func _ready() -> void:
 	camera = get_node("../Camera3D") as Camera3D
 	$CameraAttachPoint.global_position = global_position + Vector3(-10, 4, 0)
+	CustomizationManager.register_player(self)
 
 
 func _process(_delta):

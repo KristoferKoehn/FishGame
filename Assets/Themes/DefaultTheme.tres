@@ -1,7 +1,15 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bwjbvqodd16m6"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bwjbvqodd16m6"]
 
 [ext_resource type="FontFile" uid="uid://uoxmu5ua4hsb" path="res://Assets/Fonts/Roboto-Regular.ttf" id="1_i4k0i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72evn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijt8q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
 default_font = ExtResource("1_i4k0i")
 Button/font_sizes/font_size = 24
+Tree/styles/focus = SubResource("StyleBoxFlat_72evn")
+Tree/styles/panel = SubResource("StyleBoxFlat_ijt8q")

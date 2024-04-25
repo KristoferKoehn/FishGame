@@ -216,7 +216,7 @@ size = Vector2i(40, 40)
 render_target_update_mode = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer/SubViewport"]
-transform = Transform3D(3.90877e-08, 0.894237, 0.387843, 1, -4.37114e-08, -9.06002e-15, 1.69516e-08, 0.387843, -0.894237, 0, 0, 0)
+transform = Transform3D(-3.6802e-08, -0.841885, -0.432608, 1, -4.37114e-08, -9.06002e-15, -1.89083e-08, -0.432608, 0.841885, 0, 0, 0)
 mesh = SubResource("CylinderMesh_r8il6")
 script = ExtResource("4_isorw")
 
@@ -261,4 +261,44 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 
 layout_mode = 2
 text = "0"
 
+[node name="ShopPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.647059)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.025
+anchor_top = 3.2
+anchor_right = 24.2
+anchor_bottom = 13.75
+offset_bottom = -6.10352e-05
+
+[node name="ShopItems" type="Tree" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_top = 0.111
+anchor_right = 0.426
+anchor_bottom = 0.813
+offset_left = 0.159
+offset_top = 0.157997
+offset_right = 0.217987
+offset_bottom = -0.0859985
+columns = 2
+hide_folding = true
+hide_root = true
+select_mode = 1
+
+[node name="PurchaseButton" type="Button" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.066
+anchor_top = 0.841
+anchor_right = 0.2
+anchor_bottom = 0.929
+offset_left = -0.262001
+offset_top = 0.098053
+offset_right = -0.400009
+offset_bottom = -0.0379639
+text = "Purchase"
+
 [connection signal="button_down" from="Panel/HBoxContainer/GetQuestion" to="." method="_on_get_question_button_down"]
+[connection signal="pressed" from="ShopPanel/PurchaseButton" to="." method="_on_purchase_button_pressed"]

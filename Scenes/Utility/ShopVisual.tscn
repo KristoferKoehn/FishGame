@@ -52,3 +52,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_84liy")
 
 [node name="monitor" parent="." instance=ExtResource("8_8liea")]
 transform = Transform3D(0.158796, 0, -0.987311, 0, 1, 0, 0.987311, 0, 0.158796, -0.438948, 0.98639, 1.00742)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.796278, 1.71716, 1.00932)
+light_color = Color(0, 1, 1, 1)
+light_energy = 0.152
+omni_range = 1.20963

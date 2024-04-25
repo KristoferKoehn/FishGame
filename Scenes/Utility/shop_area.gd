@@ -35,8 +35,10 @@ func _input(event):
 			player_locked = false
 			current_floating.visible = true
 			CameraManager.default_view()
+			UIManager.ui.deactivate_shop()
 
 func interacted() -> void:
 	current_floating.visible = false
+	UIManager.ui.activate_shop()
 	CameraManager.assign_follow_point(get_node("CameraView"))
 	
