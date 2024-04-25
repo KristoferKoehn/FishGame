@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clxt0py6nf2d8"
-path="res://.godot/imported/LakeGroundGeometry.glb-6d933ef7b819be8ff938624f9061849b.scn"
+uid="uid://cs8wi4p5ihp7"
+path="res://.godot/imported/table_medium_broken.gltf.glb-42b97d5de9d5828dfc4ea1d6ca1bc321.scn"
 
 [deps]
 
-source_file="res://Assets/3D/LakeGroundGeometry.glb"
-dest_files=["res://.godot/imported/LakeGroundGeometry.glb-6d933ef7b819be8ff938624f9061849b.scn"]
+source_file="res://Assets/3D/DungeonProps/table_medium_broken.gltf.glb"
+dest_files=["res://.godot/imported/table_medium_broken.gltf.glb-42b97d5de9d5828dfc4ea1d6ca1bc321.scn"]
 
 [params]
 

@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch87850sacgx1"]
+
+[ext_resource type="Script" path="res://Scenes/Utility/shop_scene.gd" id="1_3vygq"]
+[ext_resource type="PackedScene" uid="uid://bf1kogf4c4giv" path="res://Scenes/Utility/ShopVisual.tscn" id="1_5pedk"]
+[ext_resource type="PackedScene" uid="uid://bp7slo7357n34" path="res://Scenes/Utility/ShopArea.tscn" id="2_xeld8"]
+[ext_resource type="Environment" uid="uid://bkw1wch2q1tmq" path="res://Scenes/Utility/WorldEnvironment.tres" id="4_o2g1u"]
+[ext_resource type="PackedScene" uid="uid://fvq4by02agps" path="res://Scenes/Utility/ShopMonitor.tscn" id="4_wd6o0"]
+
+[sub_resource type="World3D" id="World3D_hcps7"]
+environment = ExtResource("4_o2g1u")
+
+[node name="ShopScene" type="Node3D"]
+script = ExtResource("1_3vygq")
+
+[node name="ShopVisual" parent="." instance=ExtResource("1_5pedk")]
+
+[node name="ShopArea" parent="." instance=ExtResource("2_xeld8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.49124, 0.487028, 0.379689)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+own_world_3d = true
+world_3d = SubResource("World3D_hcps7")
+size = Vector2i(960, 540)
+
+[node name="ShopMonitor" parent="SubViewport" instance=ExtResource("4_wd6o0")]

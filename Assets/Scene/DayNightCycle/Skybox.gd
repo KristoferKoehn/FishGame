@@ -5,6 +5,8 @@ extends Node3D
 ## I don't know if I made some mistakes in my assumptions. I haven't found a similar solution anywhere.
 ## Most were even more simplified or much more complicated.
 
+@export var locked : bool = false
+
 const HOURS_IN_DAY : float = 24.0
 const DAYS_IN_YEAR : int = 365
 
@@ -95,7 +97,7 @@ func _ready() -> void :
 	_update()
 
 func _process( delta: float ) -> void :
-	if not Engine.is_editor_hint() : # We don't want a time lapse in the editor
+	if not Engine.is_editor_hint() && !locked: # We don't want a time lapse in the editor
 		day_time += delta * time_scale
 
 func _update() -> void :

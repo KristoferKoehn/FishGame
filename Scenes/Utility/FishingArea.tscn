@@ -17,5 +17,11 @@ shape = SubResource("BoxShape3D_fshmi")
 [node name="TextPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
 
+[node name="ContextSnapPoint" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.488167, 0)
+
+[node name="CameraView" type="Node3D" parent="."]
+transform = Transform3D(0.330086, 0, 0.943951, 0, 1, 0, -0.943951, 0, 0.330086, 7.55351, 1.48015, -2.55249)
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

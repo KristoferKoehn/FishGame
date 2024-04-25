@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp7slo7357n34"]
+
+[ext_resource type="Script" path="res://Scenes/Utility/shop_area.gd" id="1_bm4dc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fshmi"]
+size = Vector3(2.92773, 2.79297, 1)
+
+[node name="ShopArea" type="Node3D"]
+script = ExtResource("1_bm4dc")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.896484, 0)
+shape = SubResource("BoxShape3D_fshmi")
+
+[node name="TextPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.65561, -0.625441)
+
+[node name="ContextSnapPoint" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.673, -0.488167, 0.0691828)
+
+[node name="CameraView" type="Node3D" parent="."]
+transform = Transform3D(0.987776, -0.0222334, 0.154289, -1.83435e-09, 0.989776, 0.142629, -0.155883, -0.140885, 0.977677, 0.75072, 1.25506, -0.310975)
+
+[node name="Marker3D" type="Marker3D" parent="CameraView"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

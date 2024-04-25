@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c63qo6ctdln0q"]
+
+[ext_resource type="PackedScene" uid="uid://c1b5f4i6e1liw" path="res://Assets/3D/Customization/mage_hat.gltf" id="1_4udwu"]
+[ext_resource type="Script" path="res://Assets/3D/Customization/mage_hat.gd" id="2_p8ig7"]
+
+[node name="mage_hat" instance=ExtResource("1_4udwu")]
+script = ExtResource("2_p8ig7")
