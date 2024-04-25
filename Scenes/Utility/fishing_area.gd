@@ -39,4 +39,8 @@ func _input(event):
 func interacted() -> void:
 	current_floating.visible = false
 	CameraManager.assign_follow_point(get_node("CameraView"))
+	var fishingMiniGame: Node = SceneSwitcher.instantiateScene("res://Scenes/GameScenes/FishingMiniGame/FishingMiniGame.tscn")
+	var primaryGameScene: Node = get_parent()
+	var ui: Node = primaryGameScene.find_child("UI")
+	ui.add_child(fishingMiniGame)
 	
