@@ -6,6 +6,7 @@ func _ready() -> void:
 	EducationManager.questionCompleted.connect(getReward)
 	UIManager.register_UI(self)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	$Panel/HBoxContainer/MarginContainer/HBoxContainer/WormCount.text = str(CurrencyManager.worms)
@@ -15,12 +16,14 @@ func _process(_delta: float) -> void:
 	pass
 
 func getReward(success: bool) -> void:
+	EducationManager.questionCompleted.disconnect(getReward)
 	if success:
-		CurrencyManager.worms += 3
+		CurrencyManager.worms += 10
 	$Panel/HBoxContainer/GetQuestion.disabled = false
 	CurrencyManager.save_data()
 
 func _on_get_question_button_down() -> void:
+	EducationManager.questionCompleted.connect(getReward)
 	$Panel/HBoxContainer/GetQuestion.disabled = true
 	var scene : Node = SceneSwitcher.instantiateScene("res://Scenes/Menus/QuestionMenu/QuestionMenu.tscn")
 	add_child(scene)
@@ -75,4 +78,4 @@ func _on_purchase_button_pressed():
 				t_item.set_text(1, "Purchased!")
 		else:
 			return
-		
+

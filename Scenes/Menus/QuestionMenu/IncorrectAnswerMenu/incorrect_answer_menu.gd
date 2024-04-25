@@ -5,9 +5,11 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_retry_button_down() -> void:
+	var panel = $".".get_parent().get_parent().get_parent()
+	panel.size.y = panel.size.y - $MarginContainer.size.y
 	$".".get_parent().remove_child($".")
 
 func _on_quit_button_down() -> void:
 	EducationManager.completeQuestion(false)
-	queue_free()
-	#SceneSwitcher.popScene()
+	$".".get_parent().get_parent().get_parent().get_parent().get_parent().queue_free() # There is for sure a better way to do this
+	

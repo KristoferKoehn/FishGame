@@ -31,14 +31,14 @@ void fragment() {
 //}
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kr3mt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wil6p"]
 render_priority = 0
 shader = SubResource("Shader_1qhuy")
 shader_parameter/color = Color(1, 0.545098, 0.670588, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kiijg"]
 resource_local_to_scene = true
-material = SubResource("ShaderMaterial_kr3mt")
+material = SubResource("ShaderMaterial_wil6p")
 radius = 0.3
 height = 3.0
 
