@@ -72,6 +72,7 @@ func _on_purchase_button_pressed():
 				CurrencyManager.gold = CurrencyManager.gold - int(t_item.get_text(1))
 				CurrencyManager.save_data()
 				CustomizationManager.save_data()
+				t_item.set_text(1, "Purchased!")
 		else:
 			return
 		
