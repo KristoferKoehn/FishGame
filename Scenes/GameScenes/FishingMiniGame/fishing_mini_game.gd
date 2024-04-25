@@ -3,7 +3,7 @@ extends Node2D
 var fish = null
 var hook = null
 var time = 0
-var timeLimit = 10
+var timeLimit = 20
 var distanceCutoff = 200
 var successTime = 0
 var successTimeLimit = 5
