@@ -140,21 +140,33 @@ position = Vector2(960, 540)
 scale = Vector2(1920, 1080)
 texture = SubResource("PlaceholderTexture2D_l5w3y")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 48.021
+anchor_bottom = 27.013
 offset_left = 1770.0
 offset_top = 100.0
-offset_right = 1820.0
-offset_bottom = 980.0
+offset_right = -100.84
+offset_bottom = -100.52
 max_value = 1.0
 fill_mode = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="CountDown" type="Label" parent="."]
+[node name="CountDown" type="Label" parent="Control"]
 custom_minimum_size = Vector2(50, 0)
 offset_left = 1770.0
 offset_top = 50.0
-offset_right = 1810.0
-offset_bottom = 73.0
+offset_right = 1820.0
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "10"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
