@@ -13,6 +13,7 @@ func _ready() -> void:
 	global_position = center + Vector2(randi_range(-200,201), randi_range(-200,201))
 	look_at(hook.global_position)
 	velocity = Vector2(1,0) * speed
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

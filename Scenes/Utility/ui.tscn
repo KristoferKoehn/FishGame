@@ -104,9 +104,11 @@ material = SubResource("StandardMaterial3D_d0in8")
 [node name="UI" type="Control"]
 auto_translate_mode = 1
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource("1_0pg4o")
 script = ExtResource("1_xygrs")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -214,7 +216,7 @@ size = Vector2i(40, 40)
 render_target_update_mode = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer/SubViewport"]
-transform = Transform3D(3.4993e-08, 0.800576, -0.502557, 1, -4.37114e-08, -9.06002e-15, -2.19695e-08, -0.502557, -0.800576, 0, 0, 0)
+transform = Transform3D(2.5351e-08, 0.579857, -0.391931, 1, -4.37114e-08, -9.06002e-15, -1.71341e-08, -0.391931, -0.579857, 0, 0, 0)
 mesh = SubResource("CylinderMesh_r8il6")
 script = ExtResource("4_isorw")
 

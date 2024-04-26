@@ -15,8 +15,8 @@ var countingDown = true
 func _ready() -> void:
 	fish = $Fish
 	hook = $CharacterBody2D/Bobber/Hook
-	catchBar = $ProgressBar
-	countDown = $CountDown
+	catchBar = $Control/ProgressBar
+	countDown = $Control/CountDown
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
