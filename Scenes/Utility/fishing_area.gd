@@ -26,7 +26,7 @@ func _on_area_3d_body_exited(_body:Node3D) -> void:
 		current_floating.queue_free()
 		current_floating = null;
 		_body.ContextNode = null
-		
+
 
 func _input(event):
 	if event.is_action_pressed("escape"):
@@ -35,12 +35,17 @@ func _input(event):
 			player_locked = false
 			current_floating.visible = true
 			CameraManager.default_view()
+			var primaryGameScene: Node = get_parent()
+			var ui: Node = primaryGameScene.find_child("UI")
+			var questionButton: BaseButton = ui.find_child("GetQuestion")
+			questionButton.disabled = false
 
 func interacted() -> void:
 	current_floating.visible = false
 	CameraManager.assign_follow_point(get_node("CameraView"))
-	var fishingMiniGame: Node = SceneSwitcher.instantiateScene("res://Scenes/GameScenes/FishingMiniGame/FishingMiniGame.tscn")
+	var baitSelectionMenu: Node = SceneSwitcher.instantiateScene("res://Scenes/GameScenes/FishingMiniGame/BaitSelection/BaitSelection.tscn")
 	var primaryGameScene: Node = get_parent()
 	var ui: Node = primaryGameScene.find_child("UI")
-	ui.add_child(fishingMiniGame)
-	
+	var questionButton: BaseButton = ui.find_child("GetQuestion")
+	questionButton.disabled = true
+	ui.add_child(baitSelectionMenu)

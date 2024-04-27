@@ -69,25 +69,27 @@ script = ExtResource("1_elcsc")
 [node name="Boundaries" type="Node2D" parent="."]
 
 [node name="NorthWall" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, 135)
 rotation = -3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/NorthWall"]
 shape = SubResource("WorldBoundaryShape2D_k5f8b")
 
 [node name="EastWall" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(1920, 0)
+position = Vector2(1680, 0)
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/EastWall"]
 shape = SubResource("WorldBoundaryShape2D_k5f8b")
 
 [node name="SouthWall" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(0, 1080)
+position = Vector2(0, 945)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/SouthWall"]
 shape = SubResource("WorldBoundaryShape2D_k5f8b")
 
 [node name="WestWall" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(240, 0)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/WestWall"]
@@ -101,19 +103,20 @@ script = ExtResource("2_423i4")
 [node name="Bobber" type="Sprite2D" parent="CharacterBody2D"]
 z_index = 1
 rotation = -1.5708
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.375, 0.375)
 texture = ExtResource("3_1cpeu")
 centered = false
 offset = Vector2(-120, -200)
 
 [node name="Hook" type="Node2D" parent="CharacterBody2D/Bobber"]
-position = Vector2(8.30516e-06, -190)
+position = Vector2(0, -142.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(11, 0)
 shape = SubResource("CircleShape2D_8iuhk")
 
 [node name="Fish" type="CharacterBody2D" parent="."]
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 script = ExtResource("4_axm5v")
 
@@ -137,7 +140,7 @@ speed_scale = 2.0
 z_index = -1
 material = SubResource("ShaderMaterial_2bwaa")
 position = Vector2(960, 540)
-scale = Vector2(1920, 1080)
+scale = Vector2(1440, 810)
 texture = SubResource("PlaceholderTexture2D_l5w3y")
 
 [node name="Control" type="Control" parent="."]
@@ -161,6 +164,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CountDown" type="Label" parent="Control"]
 custom_minimum_size = Vector2(50, 0)
+layout_mode = 0
 offset_left = 1770.0
 offset_top = 50.0
 offset_right = 1820.0

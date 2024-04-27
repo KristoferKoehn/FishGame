@@ -11,6 +11,13 @@ var catchBar = null
 var countDown = null
 var countingDown = true
 
+func _enter_tree() -> void:
+	var scalingFactor = 0.75
+	var center = get_viewport_rect().size / 2.
+	#scale = Vector2(scalingFactor,scalingFactor)
+	var size = get_viewport_rect().size * scalingFactor
+	#position = center - (size / 2)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fish = $Fish
@@ -25,7 +32,7 @@ func _process(delta: float) -> void:
 		time = time + delta
 		countDown.text = str(int(timeLimit - time))
 	
-		if time >= timeLimit: # TODO: Offer retry
+		if time >= timeLimit: 
 			# Mission Failed
 			countingDown = false
 			$CharacterBody2D.visible = false

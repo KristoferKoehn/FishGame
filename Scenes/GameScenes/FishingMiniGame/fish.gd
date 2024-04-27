@@ -5,6 +5,7 @@ var TURN_SPEED = 3
 var center = null
 var hook = null
 var ratio = 2
+var scalingFactor = 0.75
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,8 +20,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var escapeHookVector = (global_position - hook.global_position).normalized()
-	var xScalar = abs(center.x - global_position.x) / center.x
-	var yScalar = abs(center.y - global_position.y) / center.y
+	var xScalar = abs((center.x * scalingFactor) - global_position.x) / (center.x * scalingFactor)
+	var yScalar = abs((center.y * scalingFactor) - global_position.y) / (center.y * scalingFactor)
 	var avoidWallsVector = (center - global_position).normalized()
 	avoidWallsVector = Vector2(avoidWallsVector.x * xScalar, avoidWallsVector.y * yScalar) * ratio
 	var direction = (escapeHookVector + avoidWallsVector).normalized()
