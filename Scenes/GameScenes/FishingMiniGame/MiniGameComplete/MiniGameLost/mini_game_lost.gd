@@ -7,6 +7,9 @@ func _ready() -> void:
 
 
 func _on_quit_button_down() -> void:
+	var ui: Node = get_parent().get_parent()
+	var baitSelection: Node = ui.find_child("BaitSelection", false, false)
+	baitSelection.visible = true
 	get_parent().queue_free()
 
 
@@ -21,4 +24,4 @@ func getReward(success: bool) -> void:
 	if success:
 		SceneSwitcher.replaceSelfOnParent(get_parent(), "res://Scenes/GameScenes/FishingMiniGame/FishingMiniGame.tscn")
 	else:
-		get_parent().queue_free()
+		$VBoxContainer.visible = true

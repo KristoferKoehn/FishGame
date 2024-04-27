@@ -18,21 +18,19 @@ func _ready() -> void:
 	catchBar = $Control/ProgressBar
 	countDown = $Control/CountDown
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if countingDown:
 		time = time + delta
 		countDown.text = str(int(timeLimit - time))
 	
-		if time >= timeLimit: # TODO: Offer retry
+		if time >= timeLimit: 
 			# Mission Failed
 			countingDown = false
 			$CharacterBody2D.visible = false
 			$Fish.visible = false
 			var scene: Node = SceneSwitcher.instantiateScene("res://Scenes/GameScenes/FishingMiniGame/MiniGameComplete/MiniGameLost/MiniGameLost.tscn")
 			add_child(scene)
-		
 		
 		var distance = abs(hook.global_position - fish.global_position).length()
 		if distance < distanceCutoff:

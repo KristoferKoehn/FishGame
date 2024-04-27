@@ -15,7 +15,6 @@ func _ready() -> void:
 	var center = get_viewport_rect().size / 2
 	container.position = center - (container.size / 2)
 
-
 func _on_submit_button_down() -> void:
 	if $QuestionUI/Panel/MarginContainer/VBoxContainer/HBoxContainer/LineEdit.text == str(question.answer):
 		EducationManager.completeQuestion(true)
