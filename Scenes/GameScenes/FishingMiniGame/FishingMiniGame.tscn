@@ -112,7 +112,8 @@ offset = Vector2(-120, -200)
 position = Vector2(0, -142.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(11, 0)
+position = Vector2(8, 0)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_8iuhk")
 
 [node name="Fish" type="CharacterBody2D" parent="."]
@@ -133,8 +134,6 @@ animation = &"Swim"
 autoplay = "Swim"
 frame_progress = 0.404464
 speed_scale = 2.0
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1

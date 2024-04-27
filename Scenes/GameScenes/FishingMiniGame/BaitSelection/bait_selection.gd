@@ -26,11 +26,13 @@ func _process(delta: float) -> void: # could be avoided with a refacttor. have t
 
 func _on_worm_button_button_down() -> void:
 	CurrencyManager.worms -= wormsUsedToCast
+	CurrencyManager.baitIsSuperWorm = false
 	CurrencyManager.save_data()
 	startMiniGame()
 
 func _on_super_worm_button_button_down() -> void:
 	CurrencyManager.superworms -= superWormsUsedToCast
+	CurrencyManager.baitIsSuperWorm = true
 	CurrencyManager.save_data()
 	startMiniGame()
 

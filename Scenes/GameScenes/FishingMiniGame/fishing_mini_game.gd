@@ -11,20 +11,12 @@ var catchBar = null
 var countDown = null
 var countingDown = true
 
-func _enter_tree() -> void:
-	var scalingFactor = 0.75
-	var center = get_viewport_rect().size / 2.
-	#scale = Vector2(scalingFactor,scalingFactor)
-	var size = get_viewport_rect().size * scalingFactor
-	#position = center - (size / 2)
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fish = $Fish
 	hook = $CharacterBody2D/Bobber/Hook
 	catchBar = $Control/ProgressBar
 	countDown = $Control/CountDown
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -39,7 +31,6 @@ func _process(delta: float) -> void:
 			$Fish.visible = false
 			var scene: Node = SceneSwitcher.instantiateScene("res://Scenes/GameScenes/FishingMiniGame/MiniGameComplete/MiniGameLost/MiniGameLost.tscn")
 			add_child(scene)
-		
 		
 		var distance = abs(hook.global_position - fish.global_position).length()
 		if distance < distanceCutoff:

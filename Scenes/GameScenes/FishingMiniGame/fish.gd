@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 600
-var TURN_SPEED = 3
+var TURN_SPEED = 5
 var center = null
 var hook = null
 var ratio = 2

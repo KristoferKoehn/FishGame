@@ -6,6 +6,7 @@ var superworms: int = 0
 var pearls: int = 0
 
 # Data for rewards
+var baitIsSuperWorm = false
 var chanceOfChest = 30/100.0 # needs .0
 var expectedFishValue = 1111
 

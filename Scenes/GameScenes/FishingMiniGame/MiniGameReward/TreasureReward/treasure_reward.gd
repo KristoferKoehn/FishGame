@@ -8,12 +8,13 @@ var superWorms = 0
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 func _on_get_normal_chest_button_down() -> void:
 	$VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/GetNormalChest.disabled = true
 	$VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/GetNormalChest.text = "Opened!"
 	var expectedFishValue = CurrencyManager.expectedFishValue
 	var addedGold = 2 * CurrencyManager.expectedFishValue + randi_range(-expectedFishValue, expectedFishValue + 1)
+	if CurrencyManager.baitIsSuperWorm:
+		addedGold = addedGold * 2
 	gold += addedGold
 	updateRewardLabel()
 
@@ -31,12 +32,15 @@ func getReward(success: bool) -> void:
 	if success:
 		var expectedFishValue = CurrencyManager.expectedFishValue
 		var addedGold = 3 * CurrencyManager.expectedFishValue + randi_range(-expectedFishValue, expectedFishValue + 1)
-		gold += addedGold
 		var addedPearls = randi_range(1, 3)
-		pearls += addedPearls
 		var addedSuperWorms = 1
+		if CurrencyManager.baitIsSuperWorm:
+			addedGold = addedGold * 2
+			addedPearls = addedPearls * 2
+			addedSuperWorms = addedSuperWorms * 2
+		gold += addedGold
+		pearls += addedPearls
 		superWorms += addedSuperWorms
-		CurrencyManager.save_data()
 	else:
 		$VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/GetSpecialChest.disabled = false
 		$VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/GetSpecialChest.text = "Locked. Try again?"
