@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dv0b7uu1dbrd3"]
+
+[ext_resource type="Texture2D" uid="uid://bg5fi4x5g6n73" path="res://Assets/3D/City Builder Bits/Assets/gltf/citybits_texture.png" id="1_4s6pv"]
+
+[resource]
+resource_name = "citybits_texture"
+albedo_texture = ExtResource("1_4s6pv")
