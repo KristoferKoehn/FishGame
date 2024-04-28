@@ -3,16 +3,18 @@
 [ext_resource type="Script" path="res://Scenes/Menus/QuestionMenu/question_menu.gd" id="1_dxhc1"]
 [ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="2_m8b3y"]
 
-[node name="QuestionMenu" type="Node2D"]
+[node name="QuestionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_dxhc1")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="."]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -2120.0
-offset_top = -1321.0
-offset_right = 3390.0
-offset_bottom = 2103.0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 3840.0
+offset_bottom = 2160.0
 mouse_default_cursor_shape = 5
 
 [node name="QuestionUI" type="Control" parent="."]
@@ -22,8 +24,8 @@ theme = ExtResource("2_m8b3y")
 
 [node name="Panel" type="Panel" parent="QuestionUI"]
 layout_mode = 0
-offset_right = 248.0
-offset_bottom = 119.0
+offset_right = 700.0
+offset_bottom = 289.0
 
 [node name="MarginContainer" type="MarginContainer" parent="QuestionUI/Panel"]
 layout_mode = 0
@@ -39,6 +41,7 @@ layout_mode = 2
 
 [node name="QuestionPrompt" type="Label" parent="QuestionUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Multiply the following numbers: "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="QuestionUI/Panel/MarginContainer/VBoxContainer"]
@@ -46,11 +49,13 @@ layout_mode = 2
 
 [node name="QuestionText" type="Label" parent="QuestionUI/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "99 X 99 = "
+theme_override_font_sizes/font_size = 48
+text = "999 / 99 = "
 
 [node name="LineEdit" type="LineEdit" parent="QuestionUI/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
 expand_to_text_length = true
 clear_button_enabled = true
 
@@ -60,6 +65,13 @@ theme_override_constants/margin_top = 5
 
 [node name="Submit" type="Button" parent="QuestionUI/Panel/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Submit"
 
+[node name="OpenSketchpad" type="Button" parent="QuestionUI/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Open sketchpad"
+
 [connection signal="button_down" from="QuestionUI/Panel/MarginContainer/VBoxContainer/MarginContainer/Submit" to="." method="_on_submit_button_down"]
+[connection signal="button_down" from="QuestionUI/Panel/MarginContainer/VBoxContainer/OpenSketchpad" to="." method="_on_open_sketchpad_button_down"]

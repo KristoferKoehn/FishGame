@@ -1,0 +1,270 @@
+[gd_scene load_steps=2 format=3 uid="uid://ys1xgmf8a542"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/ReportCard/v_box_container.gd" id="1_ts5jg"]
+
+[node name="ReportCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 10
+script = ExtResource("1_ts5jg")
+
+[node name="Headers" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1720, 0)
+layout_mode = 2
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/Headers"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Question type"
+horizontal_alignment = 1
+
+[node name="Recent" type="Label" parent="VBoxContainer/Headers"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Recent"
+horizontal_alignment = 1
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/Headers"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Lifetime"
+horizontal_alignment = 1
+
+[node name="SingleDigitAddition" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/SingleDigitAddition"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Single digit addition"
+
+[node name="Recent" type="Label" parent="VBoxContainer/SingleDigitAddition"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/SingleDigitAddition"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
+
+[node name="DoubleDigitAddition" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/DoubleDigitAddition"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Double digit addition"
+
+[node name="Recent" type="Label" parent="VBoxContainer/DoubleDigitAddition"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/DoubleDigitAddition"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
+
+[node name="SingleDigitSubtraction" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/SingleDigitSubtraction"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Single digit subtraction"
+
+[node name="Recent" type="Label" parent="VBoxContainer/SingleDigitSubtraction"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/SingleDigitSubtraction"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
+
+[node name="DoubleDigitSubtraction" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/DoubleDigitSubtraction"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Double digit subtraction"
+
+[node name="Recent" type="Label" parent="VBoxContainer/DoubleDigitSubtraction"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/DoubleDigitSubtraction"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
+
+[node name="SingleDigitMultiplication" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/SingleDigitMultiplication"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Single digit multiplication"
+
+[node name="Recent" type="Label" parent="VBoxContainer/SingleDigitMultiplication"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/SingleDigitMultiplication"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
+
+[node name="DoubleDigitMultiplication" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/DoubleDigitMultiplication"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Double digit multiplication"
+
+[node name="Recent" type="Label" parent="VBoxContainer/DoubleDigitMultiplication"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/DoubleDigitMultiplication"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
+
+[node name="SingleDigitDivision" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/SingleDigitDivision"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Single digit division
+"
+
+[node name="Recent" type="Label" parent="VBoxContainer/SingleDigitDivision"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/SingleDigitDivision"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
+
+[node name="DoubleDigitDivision" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/DoubleDigitDivision"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Double digit division
+"
+
+[node name="Recent" type="Label" parent="VBoxContainer/DoubleDigitDivision"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/DoubleDigitDivision"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
+
+[node name="AllTypes" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="QuestionType" type="Label" parent="VBoxContainer/AllTypes"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "All types
+"
+
+[node name="Recent" type="Label" parent="VBoxContainer/AllTypes"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "20 / 20 correct"
+
+[node name="Lifetime" type="Label" parent="VBoxContainer/AllTypes"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1000 / 1000 correct"
