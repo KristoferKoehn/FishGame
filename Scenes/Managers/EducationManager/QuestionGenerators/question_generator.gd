@@ -5,7 +5,8 @@ var firstOperand = ""
 var secondOperand = ""
 var answer = ""
 var questionPrompt = ""
-var questionText =""
+var questionText = ""
+var questionType = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

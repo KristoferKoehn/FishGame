@@ -5,6 +5,7 @@ func _ready() -> void:
 	pass
 
 func generateQuestion() -> void:
+	questionType = "divisionSingle"
 	questionPrompt = "Divide the following numbers: "
 	secondOperand = randi_range(1,10)
 	answer = getSingleDigitNumber()

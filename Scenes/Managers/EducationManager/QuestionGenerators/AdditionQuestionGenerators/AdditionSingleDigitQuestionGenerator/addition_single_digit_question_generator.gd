@@ -5,6 +5,7 @@ func _ready() -> void:
 	pass
 
 func generateQuestion() -> void:
+	questionType = "additionSingle"
 	questionPrompt = "Add the following numbers: "
 	firstOperand = getSingleDigitNumber()
 	secondOperand = getSingleDigitNumber()

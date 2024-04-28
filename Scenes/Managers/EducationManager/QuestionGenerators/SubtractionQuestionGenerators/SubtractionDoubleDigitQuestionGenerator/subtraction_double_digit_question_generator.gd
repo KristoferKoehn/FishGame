@@ -5,6 +5,7 @@ func _ready() -> void:
 	pass
 
 func generateQuestion() -> void:
+	questionType = "subtractionDouble"
 	questionPrompt = "Subtract the following numbers: "
 	firstOperand = getDoubleDigitNumber()
 	secondOperand = getDoubleDigitNumber()

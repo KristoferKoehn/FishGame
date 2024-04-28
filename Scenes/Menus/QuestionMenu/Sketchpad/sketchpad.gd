@@ -50,7 +50,6 @@ func _on_redo_button_down() -> void:
 	currentLine = redoStack.pop_back()
 	linesStack.append(currentLine)
 	currentLine.visible = true
-	#lines.add_child(currentLine)
 
 
 func _on_red_button_down() -> void:
