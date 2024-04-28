@@ -17,6 +17,7 @@ func _on_get_normal_chest_button_down() -> void:
 		addedGold = addedGold * 2
 	gold += addedGold
 	updateRewardLabel()
+	$VBoxContainer/HBoxContainer/MarginContainer2.queue_free()
 
 func _on_get_special_chest_button_down() -> void:
 	EducationManager.questionCompleted.connect(getReward)
@@ -41,6 +42,7 @@ func getReward(success: bool) -> void:
 		gold += addedGold
 		pearls += addedPearls
 		superWorms += addedSuperWorms
+		$VBoxContainer/HBoxContainer/MarginContainer.queue_free()
 	else:
 		$VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/GetSpecialChest.disabled = false
 		$VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/GetSpecialChest.text = "Locked. Try again?"

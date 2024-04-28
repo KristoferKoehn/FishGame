@@ -151,7 +151,11 @@ text = "Open Chest"
 layout_mode = 2
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "You got 0 gold, 0 pearls, and 0 Superworms!"

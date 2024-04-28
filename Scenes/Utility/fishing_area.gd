@@ -14,7 +14,7 @@ func _on_area_3d_body_entered(_body:Node3D) -> void:
 	player = _body
 	if current_floating == null:
 		current_floating = floating_text.instantiate()
-		current_floating.text = "Press E to Fish";
+		current_floating.text = "Press F to Fish";
 		current_floating.position = text_point.position
 		add_child(current_floating)
 		_body.ContextNode = self

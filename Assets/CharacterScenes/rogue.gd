@@ -46,12 +46,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _input(event):
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") || event.is_action_pressed("fish"):
 		if ContextNode != null && !InputLockout:
 			ContextNode.player_locked = true
 			tween_to_node()
 			InputLockout = true;
 			ContextNode.interacted()
+	
 
 func tween_to_node() -> void:
 	var tween = get_tree().create_tween()

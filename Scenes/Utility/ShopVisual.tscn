@@ -1,6 +1,5 @@
 [gd_scene load_steps=15 format=3 uid="uid://bf1kogf4c4giv"]
 
-[ext_resource type="PackedScene" uid="uid://n1il66lu03gd" path="res://Assets/3D/CharacterModelsglb/PrototypePete.glb" id="1_gn7q3"]
 [ext_resource type="PackedScene" uid="uid://c0mc8d0w4yhc7" path="res://Assets/3D/DungeonProps/banner_yellow.gltf.glb" id="1_qxxmm"]
 [ext_resource type="PackedScene" uid="uid://bbe568bmay07q" path="res://Assets/3D/DungeonProps/table_long.gltf.glb" id="2_i1bdc"]
 [ext_resource type="PackedScene" uid="uid://dd4wajqtyx3bk" path="res://Assets/3D/DungeonProps/crates_stacked.gltf.glb" id="4_ow0k0"]
@@ -10,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d0qapbhi5xrky" path="res://Assets/3D/Furniture/monitor.gltf" id="8_8liea"]
 [ext_resource type="PackedScene" uid="uid://4di0wgiqtyh2" path="res://Assets/3D/Halloween Bits/Assets/gltf/wagon.gltf" id="9_85me5"]
 [ext_resource type="PackedScene" uid="uid://1pcw02ou6gs3" path="res://Assets/3D/Halloween Bits/Assets/gltf/candy_green_B.gltf" id="10_415v0"]
+[ext_resource type="PackedScene" uid="uid://0nu2bg304xi0" path="res://Assets/3D/CharacterModelsglb/prototype_pete.tscn" id="11_5k7hn"]
 [ext_resource type="PackedScene" uid="uid://ck8vwp81p5oa8" path="res://Assets/3D/Halloween Bits/Assets/gltf/candy_green_C.gltf" id="11_u5klo"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_hb4oq"]
@@ -28,9 +28,6 @@ transform = Transform3D(-3.04604e-08, 1.09833, -0.204478, 1.11017e-07, 0.301356,
 
 [node name="banner_yellow_gltf2" parent="." instance=ExtResource("1_qxxmm")]
 transform = Transform3D(1.44249e-07, 1.10186, 0.195541, -3.10768e-07, 0.288183, -0.747643, -2.63364, 2.63454e-08, 9.89314e-08, -2.05391, 3.26018, -0.0470364)
-
-[node name="PrototypePete" parent="." instance=ExtResource("1_gn7q3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.03716, 2.38419e-07, -1.04149)
 
 [node name="table_long_gltf" parent="." instance=ExtResource("2_i1bdc")]
 transform = Transform3D(0.713488, 0, 0, 0, 1, 0, 0, 0, 1, -0.330447, -2.38419e-07, -0.0390053)
@@ -79,3 +76,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0737326, 0, -0.730106)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.187988, 0.461437, 1.64487)
 shape = SubResource("BoxShape3D_shupw")
+
+[node name="PrototypePete" parent="." instance=ExtResource("11_5k7hn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.0789, 0, -0.684153)
