@@ -10,6 +10,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
 default_font = ExtResource("1_i4k0i")
+default_font_size = 48
 Button/font_sizes/font_size = 24
 Tree/styles/focus = SubResource("StyleBoxFlat_72evn")
 Tree/styles/panel = SubResource("StyleBoxFlat_ijt8q")

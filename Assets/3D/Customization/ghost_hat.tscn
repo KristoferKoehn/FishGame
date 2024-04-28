@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmn3e8e8rgi6w"]
+
+[ext_resource type="PackedScene" uid="uid://c1b5f4i6e1liw" path="res://Assets/3D/Customization/mage_hat.gltf" id="1_4kb8w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4ddg"]
+transparency = 1
+albedo_color = Color(0.7, 0, 2, 0.946)
+
+[node name="ghost_hat" instance=ExtResource("1_4kb8w")]
+
+[node name="Mage_Hat" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_g4ddg")

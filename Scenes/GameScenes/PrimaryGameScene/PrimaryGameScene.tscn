@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjo3j8ugpjlpn"]
+[gd_scene load_steps=16 format=3 uid="uid://cjo3j8ugpjlpn"]
 
 [ext_resource type="PackedScene" uid="uid://qp3eutfsgqpv" path="res://Scenes/ComponentScenes/MainLevel.tscn" id="1_po8m0"]
 [ext_resource type="PackedScene" uid="uid://dthxavwwq2uvk" path="res://Assets/CharacterScenes/rogue.tscn" id="2_6fhvn"]
@@ -10,6 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://bhu8l5a1onxjs" path="res://Assets/Sound/Track1/NightTime.wav" id="8_wr27q"]
 [ext_resource type="PackedScene" uid="uid://ch87850sacgx1" path="res://Scenes/Utility/ShopScene.tscn" id="9_go6cp"]
 [ext_resource type="PackedScene" uid="uid://cm082mmseleu3" path="res://Assets/3D/City Builder Bits/Assets/gltf/car_police.gltf" id="10_kunvn"]
+[ext_resource type="PackedScene" uid="uid://2gaandr5pom2" path="res://Assets/3D/Prototype Bits/Assets/gltf/Barrel_A.gltf" id="11_02tjr"]
+[ext_resource type="Script" path="res://Scenes/GameScenes/PrimaryGameScene/garbage_barrels.gd" id="11_pal5j"]
+[ext_resource type="PackedScene" uid="uid://chwll18flutse" path="res://Assets/3D/Prototype Bits/Assets/gltf/Barrel_B.gltf" id="12_drrrg"]
+[ext_resource type="PackedScene" uid="uid://bwfb8jqbnjql6" path="res://Assets/3D/Prototype Bits/Assets/gltf/Barrel_C.gltf" id="13_yd5g0"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i85r6"]
 streams_count = 3
@@ -26,8 +30,6 @@ stream_2/weight = 1.0
 
 [node name="Rogue" parent="." instance=ExtResource("2_6fhvn")]
 
-[node name="Camera3D" parent="." instance=ExtResource("3_mdb2e")]
-
 [node name="FishingArea" parent="." instance=ExtResource("4_gprvy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.3973, -0.0624678, 2.08086)
 
@@ -43,3 +45,34 @@ transform = Transform3D(0.483068, 0, -0.875583, 0, 1, 0, 0.875583, 0, 0.483068, 
 
 [node name="car_police2" parent="." instance=ExtResource("10_kunvn")]
 transform = Transform3D(5.93665, 7.94536, 5.89906, -5.63604, 8.36915, -5.60035, -8.13405, 0, 8.18589, 8.86018, -7.46371, 16.3337)
+
+[node name="Camera3D" parent="." instance=ExtResource("3_mdb2e")]
+
+[node name="Garbage Barrels" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 39.4431, -2.74569, -35.845)
+script = ExtResource("11_pal5j")
+
+[node name="Barrel_A2" parent="Garbage Barrels" instance=ExtResource("11_02tjr")]
+transform = Transform3D(2, 0, 0, 0, 1.85905, 1.5697, 0, -2.35456, 1.23937, 1.6653, 0, -0.919809)
+
+[node name="Barrel_A3" parent="Garbage Barrels" instance=ExtResource("11_02tjr")]
+transform = Transform3D(1.76021, 1.1179, -0.588426, 0, 1.85905, 1.5697, 0.949559, -2.07226, 1.09077, -1.75823, 0, -1.28162)
+
+[node name="Barrel_B2" parent="Garbage Barrels" instance=ExtResource("12_drrrg")]
+transform = Transform3D(2, -8.9407e-08, -6.03189e-10, 3.72472e-08, 1.85082, 1.57402, -4.65373e-08, -2.36103, 1.23388, 3.76701, 0, -1.22753)
+
+[node name="Barrel_A4" parent="Garbage Barrels" instance=ExtResource("11_02tjr")]
+transform = Transform3D(0.104828, 2.95002, -0.348113, -0.056239, 0.52704, 1.96809, 1.99646, -0.140051, 0.0737182, 3.34172, 0, 0.245104)
+
+[node name="Barrel_C2" parent="Garbage Barrels" instance=ExtResource("13_yd5g0")]
+transform = Transform3D(-0.280211, -0.420522, 1.96033, -1.69475, 1.58714, -0.0909302, -1.02436, -2.51081, -0.385805, 1.34895, 0, 0.635622)
+
+[node name="Barrel_C3" parent="Garbage Barrels" instance=ExtResource("13_yd5g0")]
+transform = Transform3D(0.907844, 2.29843, 0.909895, -1.69475, 1.58714, -0.0909302, -0.551042, -1.09462, 1.77871, -0.684181, 0, -0.269609)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Garbage Barrels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
+light_color = Color(0, 1, 0, 1)
+light_energy = 4.115
+light_indirect_energy = 2.605
+omni_range = 16.0

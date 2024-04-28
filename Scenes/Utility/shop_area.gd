@@ -9,6 +9,9 @@ var current_floating = null
 var player_locked : bool = false
 var player : Rogue = null;
 
+func _ready() -> void:
+	UIManager.ui.connect("back", back)
+
 func _on_area_3d_body_entered(_body:Node3D) -> void:
 	if _body.name != "Rogue": return
 	player = _body
@@ -26,16 +29,15 @@ func _on_area_3d_body_exited(_body:Node3D) -> void:
 		current_floating.queue_free()
 		current_floating = null;
 		_body.ContextNode = null
-		
 
-func _input(event):
-	if event.is_action_pressed("escape"):
-		if player_locked && player != null:
-			player.InputLockout = false
-			player_locked = false
-			current_floating.visible = true
-			CameraManager.default_view()
-			UIManager.ui.deactivate_shop()
+func back() -> void:
+	if player_locked && player != null:
+		player.InputLockout = false
+		player_locked = false
+		current_floating.visible = true
+		CameraManager.default_view()
+		UIManager.ui.deactivate_shop()
+
 
 func interacted() -> void:
 	current_floating.visible = false

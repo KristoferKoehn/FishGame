@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbxw7csqrnq22"]
+
+[ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="1_4ht88"]
+[ext_resource type="Script" path="res://Scenes/Menus/CustomizationMenu/customization_menu.gd" id="1_ctbfg"]
+
+[node name="CustomizationMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4ht88")
+script = ExtResource("1_ctbfg")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.449)
+layout_mode = 0
+offset_left = 126.0
+offset_top = 169.0
+offset_right = 705.0
+offset_bottom = 822.0
+
+[node name="Tree" type="Tree" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.088
+anchor_top = 0.032
+anchor_right = 0.915
+anchor_bottom = 0.623
+offset_left = 0.135998
+offset_top = 0.103998
+offset_right = -0.119995
+offset_bottom = 0.180969
+hide_root = true
+
+[node name="EquipButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.634
+anchor_top = 0.928
+anchor_right = 0.963
+anchor_bottom = 0.985
+offset_left = 0.0480042
+offset_top = 0.0159912
+offset_right = 0.135986
+offset_bottom = -0.205078
+text = "Equip"
+
+[node name="BackButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.926
+anchor_right = 0.274
+anchor_bottom = 0.983
+offset_left = -0.152
+offset_top = 0.32196
+offset_right = 0.127991
+offset_bottom = 0.100952
+text = "Back"
+
+[connection signal="pressed" from="Panel/EquipButton" to="." method="_on_equip_button_pressed"]
+[connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://v2j7lw6jdcec"]
+
+[ext_resource type="PackedScene" uid="uid://c1b5f4i6e1liw" path="res://Assets/3D/Customization/mage_hat.gltf" id="1_si84k"]
+[ext_resource type="Material" uid="uid://y0rfxgql0dcs" path="res://Assets/3D/Customization/BlueHat.tres" id="2_06g1i"]
+
+[node name="blue_hat" instance=ExtResource("1_si84k")]
+
+[node name="Mage_Hat" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_06g1i")

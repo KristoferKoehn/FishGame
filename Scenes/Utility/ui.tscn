@@ -116,7 +116,7 @@ script = ExtResource("1_xygrs")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(0, 65)
+custom_minimum_size = Vector2(0, 66)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 65.0
@@ -222,7 +222,7 @@ size = Vector2i(65, 65)
 render_target_update_mode = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer/SubViewport"]
-transform = Transform3D(-2.17574e-08, -0.497661, -0.490316, 1, -4.37114e-08, -9.06002e-15, -2.14375e-08, -0.490316, 0.497661, 0, 0, 0)
+transform = Transform3D(1.2672e-08, 0.289853, 0.633599, 1, -4.37114e-08, -9.06002e-15, 2.77015e-08, 0.633599, -0.289853, 0, 0, 0)
 mesh = SubResource("CylinderMesh_r8il6")
 script = ExtResource("4_isorw")
 
@@ -277,31 +277,30 @@ text = "Get Worms
 "
 
 [node name="ShopPanel" type="Panel" parent="."]
-visible = false
 self_modulate = Color(1, 1, 1, 0.647059)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.273
-anchor_top = 0.258
-anchor_right = 0.688
-anchor_bottom = 0.667
-offset_left = -289.16
-offset_top = -121.64
-offset_right = 334.04
-offset_bottom = 236.64
+anchor_left = 0.122
+anchor_top = 0.145
+anchor_right = 0.862
+anchor_bottom = 0.886
+offset_left = 0.76001
+offset_top = 0.399979
+offset_right = -0.039917
+offset_bottom = 0.119934
 
 [node name="ShopItems" type="Tree" parent="ShopPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.063
 anchor_top = 0.111
-anchor_right = 0.426
-anchor_bottom = 0.813
-offset_left = 0.159
-offset_top = 0.157997
-offset_right = 0.217987
-offset_bottom = -0.0859985
-columns = 2
+anchor_right = 0.932
+anchor_bottom = 0.812
+offset_left = 0.539993
+offset_top = 0.199989
+offset_right = 0.559814
+offset_bottom = 0.399963
+columns = 3
 hide_folding = true
 hide_root = true
 select_mode = 1
@@ -313,34 +312,61 @@ anchor_left = 0.066
 anchor_top = 0.841
 anchor_right = 0.2
 anchor_bottom = 0.929
-offset_left = -0.262001
-offset_top = 0.098053
-offset_right = -0.400009
-offset_bottom = -0.0379639
+offset_left = -0.720009
+offset_top = -0.799988
+offset_right = -1.00003
+offset_bottom = -1.20001
 text = "Purchase"
+
+[node name="BackButton" type="Button" parent="ShopPanel"]
+layout_mode = 0
+offset_left = 1142.0
+offset_top = 672.0
+offset_right = 1332.0
+offset_bottom = 742.0
+text = "Back"
 
 [node name="PausePanel" type="Panel" parent="."]
 process_mode = 2
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.07
-anchor_top = 0.18
+anchor_left = 0.056
+anchor_top = 0.147
 anchor_right = 0.937
-anchor_bottom = 0.856
-offset_left = 0.600006
-offset_top = -0.400009
+anchor_bottom = 0.901
+offset_left = -0.520004
+offset_top = 0.240005
 offset_right = 0.959961
-offset_bottom = -8.47998
+offset_bottom = -0.0800171
 script = ExtResource("7_ljgsi")
 
-[node name="Label" type="Label" parent="PausePanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel"]
 layout_mode = 0
-offset_left = 941.0
-offset_top = 397.0
-offset_right = 981.0
-offset_bottom = 416.0
-text = "FUCKING PAUSED LMAO"
+offset_left = 148.0
+offset_top = 143.0
+offset_right = 548.0
+offset_bottom = 563.0
+
+[node name="equip_customizations_button" type="Button" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+text = "Equip Customizations"
+
+[node name="report _card_button" type="Button" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+text = "Report Card"
+
+[node name="options_button" type="Button" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="quit_button" type="Button" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
 
 [connection signal="button_down" from="GetQuestion" to="." method="_on_get_question_button_down"]
 [connection signal="pressed" from="ShopPanel/PurchaseButton" to="." method="_on_purchase_button_pressed"]
+[connection signal="pressed" from="ShopPanel/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/equip_customizations_button" to="." method="_on_equip_customizations_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

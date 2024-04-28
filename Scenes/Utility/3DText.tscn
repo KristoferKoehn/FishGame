@@ -8,6 +8,7 @@ emission_enabled = true
 emission = Color(1, 1, 0, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_mxjdx"]
+resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_nfbrr")
 text = "sample text"
 font_size = 64
@@ -16,7 +17,7 @@ curve_step = 10.0
 depth = 0.3
 
 [node name="3dText" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.515385, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.706788, 0)
 script = ExtResource("1_0ypxm")
 text = "sample text"
 
