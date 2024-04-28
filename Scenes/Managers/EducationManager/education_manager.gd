@@ -115,7 +115,8 @@ func toggleTargetWeaknesses(toggle: bool) -> void:
 
 func toggleGenerator(toggle: bool, generator: QuestionGenerator) -> void:
 	if toggle:
-		questionGenerators.append(generator)
+		if !questionGenerators.has(generator):
+			questionGenerators.append(generator)
 	else:
 		questionGenerators.erase(generator)
 

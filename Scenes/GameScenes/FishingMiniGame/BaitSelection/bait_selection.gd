@@ -16,7 +16,7 @@ func _ready() -> void:
 	$VBoxContainer/HBoxContainer/SuperWormButton.disabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void: # could be avoided with a refacttor. have the currency manager publish a currency changed event that this subscribes to so we arent checking every frame. Also, make it the currency managers responsibility to save its own stuff on a change. 
+func _process(_delta: float) -> void: # could be avoided with a refactor. have the currency manager publish a currency changed event that this subscribes to so we arent checking every frame. Also, make it the currency managers responsibility to save its own stuff on a change. 
 	worms = CurrencyManager.worms
 	if worms < wormsUsedToCast:
 		$VBoxContainer/HBoxContainer/WormButton.disabled = true

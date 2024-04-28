@@ -7,7 +7,7 @@ func _ready() -> void:
 func generateQuestion() -> void:
 	var questionHistory: Dictionary = EducationManager.questionHistory
 	var recentLength: int = EducationManager.recentLength
-	var max: int = 0
+	var numToBeat: int = 0
 	var SelectedQuestionType = null
 	
 	var keys = questionHistory.keys()
@@ -16,21 +16,21 @@ func generateQuestion() -> void:
 	for key in keys:
 		var history = questionHistory[key]
 		var totalAttempted = history[2]
-		if totalAttempted > 0 && totalAttempted < recentLength && totalAttempted > max:
-			max = totalAttempted
+		if totalAttempted > 0 && totalAttempted < recentLength && totalAttempted > numToBeat:
+			numToBeat = totalAttempted
 			SelectedQuestionType = key
 	
 	if SelectedQuestionType == null:
-		max = recentLength
+		numToBeat = recentLength
 		for key in keys:
 			var history = questionHistory[key]
 			var recentCorrect = history[0]
 			var totalAttempted = history[2]
-			if totalAttempted > 0 && recentCorrect <= max:
-				max = recentCorrect
+			if totalAttempted > 0 && recentCorrect <= numToBeat:
+				numToBeat = recentCorrect
 				SelectedQuestionType = key
 		
-		if max == recentLength: # all scores are maxed
+		if numToBeat == recentLength: # all scores are maxed
 			SelectedQuestionType = keys.pick_random()
 	
 	copyValuesFromSelectedGenerator(SelectedQuestionType)

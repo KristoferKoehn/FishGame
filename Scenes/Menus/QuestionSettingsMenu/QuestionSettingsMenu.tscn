@@ -283,14 +283,31 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="QuestionSettingsVBox"]
 layout_mode = 2
+theme_override_constants/separation = 65
 alignment = 1
 
-[node name="Label" type="Label" parent="QuestionSettingsVBox/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestionSettingsVBox/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="QuestionSettingsVBox/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Target weaknesses"
+text = "Target weaknesses (internal)"
 
-[node name="TargetWeaknesses" type="CheckBox" parent="QuestionSettingsVBox/HBoxContainer"]
+[node name="TargetWeaknessesInternal" type="CheckBox" parent="QuestionSettingsVBox/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="QuestionSettingsVBox/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="QuestionSettingsVBox/HBoxContainer/HBoxContainer2"]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Target weaknesses (external)"
+
+[node name="TargetWeaknessesExternal" type="CheckBox" parent="QuestionSettingsVBox/HBoxContainer/HBoxContainer2"]
+auto_translate_mode = 1
 layout_mode = 2
 
 [node name="Save" type="Button" parent="QuestionSettingsVBox"]
@@ -313,5 +330,6 @@ texture = SubResource("PlaceholderTexture2D_2o0bk")
 [connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationDoubleDigitOptionContainer/MultiplicationDoubleDigitCheckBox" to="." method="_on_multiplication_double_digit_check_box_toggled"]
 [connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionSingleDigitOptionContainer/DivisionSingleDigitCheckBox" to="." method="_on_division_single_digit_check_box_toggled"]
 [connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionDoubleDigitOptionContainer/DivisionDoubleDigitCheckBox" to="." method="_on_division_double_digit_check_box_toggled"]
-[connection signal="toggled" from="QuestionSettingsVBox/HBoxContainer/TargetWeaknesses" to="." method="_on_target_weaknesses_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/HBoxContainer/HBoxContainer/TargetWeaknessesInternal" to="." method="_on_target_weaknesses_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/HBoxContainer/HBoxContainer2/TargetWeaknessesExternal" to="." method="_on_target_weaknesses_toggled"]
 [connection signal="button_down" from="QuestionSettingsVBox/Save" to="." method="_on_save_button_down"]
