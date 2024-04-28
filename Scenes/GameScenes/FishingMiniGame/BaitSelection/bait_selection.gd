@@ -1,9 +1,13 @@
 extends Control
 
+signal back_button_pressed
+
 var wormsUsedToCast = 3
 var superWormsUsedToCast = 1
 var worms
 var superWorms
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,3 +59,7 @@ func getReward(success: bool) -> void:
 		CurrencyManager.worms += 10
 		CurrencyManager.save_data()
 	visible = true
+
+
+func _on_back_button_pressed() -> void:
+	emit_signal("back_button_pressed")

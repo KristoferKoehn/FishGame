@@ -27,24 +27,24 @@ func _on_area_3d_body_exited(_body:Node3D) -> void:
 		current_floating = null;
 		_body.ContextNode = null
 
+func back() -> void:
+	if player_locked && player != null:
+		player.InputLockout = false
+		player_locked = false
+		current_floating.visible = true
+		CameraManager.default_view()
+		var primaryGameScene: Node = get_parent()
+		var ui: Node = primaryGameScene.find_child("UI")
+		var questionButton: BaseButton = ui.find_child("GetQuestion")
+		questionButton.disabled = false
+		ui.find_child("BaitSelection", true, false).queue_free()
 
-func _input(event):
-	if event.is_action_pressed("escape"):
-		if player_locked && player != null:
-			player.InputLockout = false
-			player_locked = false
-			current_floating.visible = true
-			CameraManager.default_view()
-			var primaryGameScene: Node = get_parent()
-			var ui: Node = primaryGameScene.find_child("UI")
-			var questionButton: BaseButton = ui.find_child("GetQuestion")
-			questionButton.disabled = false
-			ui.find_child("BaitSelection", true, false).queue_free()
 
 func interacted() -> void:
 	current_floating.visible = false
 	CameraManager.assign_follow_point(get_node("CameraView"))
 	var baitSelectionMenu: Node = SceneSwitcher.instantiateScene("res://Scenes/GameScenes/FishingMiniGame/BaitSelection/BaitSelection.tscn")
+	baitSelectionMenu.connect("back_button_pressed", back)
 	var primaryGameScene: Node = get_parent()
 	var ui: Node = primaryGameScene.find_child("UI")
 	var questionButton: BaseButton = ui.find_child("GetQuestion")

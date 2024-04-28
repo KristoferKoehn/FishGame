@@ -19,6 +19,5 @@ func reprocess() -> void:
 	tween.tween_callback(self.reprocess)
 	direction = !direction
 
-
 func _process(_delta: float) -> void:
-	get_node("MeshInstance3D").mesh.text = text
+	$MeshInstance3D.mesh.text = text

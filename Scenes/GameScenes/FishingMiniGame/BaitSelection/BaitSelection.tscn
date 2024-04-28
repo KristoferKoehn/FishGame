@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1ylv4d3ixsk2"]
+[gd_scene load_steps=4 format=3 uid="uid://d1ylv4d3ixsk2"]
 
+[ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="1_43jrd"]
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/BaitSelection/bait_selection.gd" id="1_ovopr"]
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/BaitSelection/v_box_container.gd" id="2_c8tru"]
 
 [node name="BaitSelection" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_43jrd")
 script = ExtResource("1_ovopr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -47,6 +49,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Get more worms! (Question)"
 
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="BackButton" type="Button" parent="VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/WormButton" to="." method="_on_worm_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/SuperWormButton" to="." method="_on_super_worm_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/MarginContainer2/GetMoreWorms" to="." method="_on_get_more_worms_button_down"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer3/BackButton" to="." method="_on_back_button_pressed"]

@@ -3,6 +3,7 @@ extends Node
 var items_in_shop : Dictionary = {}
 var items_unlocked : Array = []
 var has_shop_list : bool = false
+var player_node : Node3D 
 
 func _ready():
 	var fileExists = FileAccess.file_exists("user://customization_settings.dat")
@@ -17,9 +18,9 @@ func _ready():
 
 
 func register_player(player : Rogue) -> void:
+	player_node = player
 	for accessory in player.get_node("Rig/Skeleton3D/HeadAccessory").get_children():
-		items_in_shop[accessory.name] = accessory.get_meta("price")
-		print(accessory.name + " at price " + str(accessory.get_meta("price")))
+		items_in_shop[accessory.name] = accessory.get_meta("price") if accessory.has_meta("price") else accessory.get_meta("pearls")
 
 	has_shop_list = true
 
@@ -35,3 +36,5 @@ func unlock_item(item_string) -> void:
 func activate_shop(ui : UI) -> void:
 	ui.activate_shop()
 
+func get_player() -> Node3D:
+	return player_node
