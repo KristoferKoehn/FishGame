@@ -29,6 +29,9 @@ func _ready() -> void:
 	
 	var divisionDoubleDigitCheckBox = $QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionDoubleDigitOptionContainer/DivisionDoubleDigitCheckBox
 	divisionDoubleDigitCheckBox.set_pressed_no_signal(questionSettings.DivisionDoubleDigit)
+	
+	var targetWeaknessesCheckBox = $QuestionSettingsVBox/HBoxContainer/HBoxContainer/TargetWeaknessesInternal
+	targetWeaknessesCheckBox.set_pressed_no_signal(questionSettings.TargetWeaknesses)
 
 func _on_addition_single_digit_check_box_toggled(toggled_on: bool) -> void:
 	questionSettings.AdditionSingleDigit = toggled_on
@@ -63,8 +66,12 @@ func _on_division_double_digit_check_box_toggled(toggled_on: bool) -> void:
 	EducationManager.toggleDivisionDoubleDigitQuestionGenerator(toggled_on)
 
 func _on_target_weaknesses_toggled(toggled_on: bool) -> void:
-	questionSettings.TargetWeaknesses = toggled_on
-	EducationManager.toggleTargetWeaknesses(toggled_on)
+	if $QuestionSettingsVBox/HBoxContainer/HBoxContainer/TargetWeaknessesInternal.button_pressed || $QuestionSettingsVBox/HBoxContainer/HBoxContainer2/TargetWeaknessesExternal.button_pressed:
+		questionSettings.TargetWeaknesses = true
+		EducationManager.toggleTargetWeaknesses(true)
+	else:
+		questionSettings.TargetWeaknesses = false
+		EducationManager.toggleTargetWeaknesses(false)
 
 func _on_save_button_down() -> void:
 	var isValid = questionSettings.CheckIsValid()
