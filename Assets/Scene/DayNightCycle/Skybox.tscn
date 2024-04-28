@@ -36,7 +36,7 @@ shader_parameter/stars_speed = 1.0
 shader_parameter/stars_scale = 1.0
 shader_parameter/stars_opacity = 1.0
 shader_parameter/stars_texture = ExtResource("3_mjyi7")
-shader_parameter/overwritten_time = 301098.0
+shader_parameter/overwritten_time = 301093.0
 
 [sub_resource type="Sky" id="Sky_q13r3"]
 sky_material = SubResource("ShaderMaterial_msgkm")
@@ -45,7 +45,6 @@ sky_material = SubResource("ShaderMaterial_msgkm")
 background_mode = 2
 sky = SubResource("Sky_q13r3")
 ambient_light_source = 3
-ambient_light_sky_contribution = 0.03
 glow_enabled = true
 fog_light_color = Color(0.192157, 0.552941, 0.776471, 1)
 fog_light_energy = 0.2
@@ -53,27 +52,27 @@ fog_density = 0.005
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_g4j45")
-day_time = 10.9756
+day_time = 10.9254
 latitude = 47.6
 day_of_year = 125
 use_day_time_for_shader = true
 time_scale = 0.1
-sun_base_enegry = 1.0
 moon_base_enegry = 0.1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bh1jy")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.847143, -0.195679, -0.494025, 0.52613, 0.178679, 0.831422, -0.0744197, -0.964253, 0.254319, 0, 0, 0)
+transform = Transform3D(0.846398, -0.20502, -0.491506, 0.526814, 0.187209, 0.829108, -0.0779694, -0.960687, 0.26646, 0, 0, 0)
 rotation_order = 4
+light_energy = 0.0
 shadow_enabled = true
 shadow_opacity = 0.75
 shadow_blur = 5.0
 directional_shadow_mode = 0
 
 [node name="Moon" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.660938, 0.208132, -0.721, 0.750421, -0.190051, 0.633047, -0.00526923, -0.959458, -0.281799, 0, 0, 0)
+transform = Transform3D(0.657263, 0.217111, -0.721712, 0.753628, -0.19825, 0.62669, -0.00701766, -0.955802, -0.293923, 0, 0, 0)
 rotation_order = 4
 light_color = Color(1, 0.980392, 0.6, 1)
 light_energy = 0.1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf1kogf4c4giv"]
+[gd_scene load_steps=14 format=3 uid="uid://bf1kogf4c4giv"]
 
 [ext_resource type="PackedScene" uid="uid://n1il66lu03gd" path="res://Assets/3D/CharacterModelsglb/PrototypePete.glb" id="1_gn7q3"]
 [ext_resource type="PackedScene" uid="uid://c0mc8d0w4yhc7" path="res://Assets/3D/DungeonProps/banner_yellow.gltf.glb" id="1_qxxmm"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ct5t3rrcvm7e2" path="res://Assets/3D/DungeonProps/box_stacked.gltf.glb" id="6_q474s"]
 [ext_resource type="PackedScene" uid="uid://bvt5rq3mjs64i" path="res://Assets/3D/DungeonProps/wall_open_scaffold.gltf.glb" id="7_wsvie"]
 [ext_resource type="PackedScene" uid="uid://d0qapbhi5xrky" path="res://Assets/3D/Furniture/monitor.gltf" id="8_8liea"]
+[ext_resource type="PackedScene" uid="uid://4di0wgiqtyh2" path="res://Assets/3D/Halloween Bits/Assets/gltf/wagon.gltf" id="9_85me5"]
+[ext_resource type="PackedScene" uid="uid://1pcw02ou6gs3" path="res://Assets/3D/Halloween Bits/Assets/gltf/candy_green_B.gltf" id="10_415v0"]
+[ext_resource type="PackedScene" uid="uid://ck8vwp81p5oa8" path="res://Assets/3D/Halloween Bits/Assets/gltf/candy_green_C.gltf" id="11_u5klo"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_hb4oq"]
 size = Vector2(1.4, 0.8)
@@ -58,3 +61,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.796278, 1.71716, 1.00932)
 light_color = Color(0, 1, 1, 1)
 light_energy = 0.152
 omni_range = 1.20963
+
+[node name="wagon2" parent="." instance=ExtResource("9_85me5")]
+transform = Transform3D(0.312281, 0, 0.670881, 0, 0.74, 0, -0.670881, 0, 0.312281, 0.398726, 2.38419e-07, 6.13369)
+
+[node name="candy_green_B2" parent="." instance=ExtResource("10_415v0")]
+transform = Transform3D(0.586514, 0, 0.809939, 0, 1, 0, -0.809939, 0, 0.586514, 0.44434, 1.02119, 6.20863)
+
+[node name="candy_green_C2" parent="candy_green_B2" instance=ExtResource("11_u5klo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0737326, 0, -0.730106)

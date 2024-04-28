@@ -1,43 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://n3845gsd64vr"]
+[gd_scene load_steps=9 format=3 uid="uid://n3845gsd64vr"]
 
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/MiniGameReward/FishReward/fish_reward.gd" id="1_470n4"]
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/MiniGameReward/FishReward/v_box_container.gd" id="1_foylh"]
 [ext_resource type="Environment" uid="uid://bkw1wch2q1tmq" path="res://Scenes/Utility/WorldEnvironment.tres" id="2_hguhq"]
+[ext_resource type="ArrayMesh" uid="uid://7iq6ps1pi1t2" path="res://Assets/3D/Fish/Models/Fish1.obj" id="4_1wghi"]
+[ext_resource type="Texture2D" uid="uid://eysxt30dx471" path="res://Assets/3D/Fish/Textures/Material.001 Normal.png" id="5_7nny0"]
+[ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/MiniGameReward/FishReward/Fish.gd" id="6_88f77"]
 
 [sub_resource type="World3D" id="World3D_7cllo"]
 environment = ExtResource("2_hguhq")
 
-[sub_resource type="Shader" id="Shader_qek7l"]
-code = "shader_type spatial;
-
-uniform vec4 color : source_color;
-
-void vertex() {
-	// Called for every vertex the material is visible on.
-	VERTEX.z += sin(TIME * 1.2 + VERTEX.y) * 1.2;
-}
-
-void fragment() {
-	ALBEDO = color.rgb;
-	ALPHA = color.a;
-}
-
-//void light() {
-	// Called for every pixel for every light affecting the material.
-	// Uncomment to replace the default light processing function with this one.
-//}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kr3mt"]
-render_priority = 0
-shader = SubResource("Shader_qek7l")
-shader_parameter/color = Color(1, 0.545098, 0.670588, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ktaso"]
-resource_local_to_scene = true
-material = SubResource("ShaderMaterial_kr3mt")
-radius = 0.3
-height = 3.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43yde"]
+albedo_texture = ExtResource("5_7nny0")
 
 [node name="FishReward" type="Control"]
 layout_mode = 3
@@ -72,21 +46,21 @@ own_world_3d = true
 world_3d = SubResource("World3D_7cllo")
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(400, 400)
+size = Vector2i(945, 405)
 render_target_update_mode = 4
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VBoxContainer/SubViewportContainer/SubViewport"]
-transform = Transform3D(0.862514, -0.420997, 0.28077, 0, 0.554844, 0.831954, -0.506034, -0.717572, 0.478561, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_ktaso")
-skeleton = NodePath("../../../../../../..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="VBoxContainer/SubViewportContainer/SubViewport"]
 transform = Transform3D(0.201078, 0, 0.979575, 0, 1, 0, -0.979575, 0, 0.201078, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="VBoxContainer/SubViewportContainer/SubViewport"]
-transform = Transform3D(-0.175367, 0, 0.984503, 0, 1, 0, -0.984503, 0, -0.175367, 4, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.6, 0, 0)
 current = true
 fov = 62.1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VBoxContainer/SubViewportContainer/SubViewport"]
+mesh = ExtResource("4_1wghi")
+surface_material_override/0 = SubResource("StandardMaterial3D_43yde")
+script = ExtResource("6_88f77")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2

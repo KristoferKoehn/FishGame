@@ -39,6 +39,7 @@ func _input(event):
 			var ui: Node = primaryGameScene.find_child("UI")
 			var questionButton: BaseButton = ui.find_child("GetQuestion")
 			questionButton.disabled = false
+			ui.find_child("BaitSelection", true, false).queue_free()
 
 func interacted() -> void:
 	current_floating.visible = false

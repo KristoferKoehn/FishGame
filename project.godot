@@ -24,6 +24,7 @@ CurrencyManager="*res://Scenes/Managers/CurrencyManager/CurrencyManager.tscn"
 CameraManager="*res://Scenes/Managers/CameraManager/CameraManager.tscn"
 CustomizationManager="*res://Scenes/Managers/CustomizationManager/CustomizationManager.tscn"
 UIManager="*res://Scenes/Managers/UIManager/UIManager.tscn"
+TimeManager="*res://Scenes/Managers/TimeManager/TimeManager.tscn"
 
 [display]
 

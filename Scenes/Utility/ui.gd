@@ -1,10 +1,11 @@
 class_name UI
 extends Control
 
+var pause_pressed : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UIManager.register_UI(self)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -12,18 +13,24 @@ func _process(_delta: float) -> void:
 	$Panel/HBoxContainer/MarginContainer2/HBoxContainer/SuperWormCount.text = str(CurrencyManager.superworms)
 	$Panel/HBoxContainer/MarginContainer3/HBoxContainer/GoldCount.text = str(CurrencyManager.gold)
 	$Panel/HBoxContainer/MarginContainer4/HBoxContainer/PearlCount.text = str(CurrencyManager.pearls)
+	
+	if Input.is_action_just_pressed("escape"):
+		get_tree().paused = true
+		$PausePanel.visible = true
+		pause_pressed = true
+		print("pause")
 	pass
 
 func getReward(success: bool) -> void:
 	EducationManager.questionCompleted.disconnect(getReward)
 	if success:
 		CurrencyManager.worms += 10
-	$Panel/HBoxContainer/GetQuestion.disabled = false
+	$GetQuestion.disabled = false
 	CurrencyManager.save_data()
 
 func _on_get_question_button_down() -> void:
 	EducationManager.questionCompleted.connect(getReward)
-	$Panel/HBoxContainer/GetQuestion.disabled = true
+	$GetQuestion.disabled = true
 	var scene : Node = SceneSwitcher.instantiateScene("res://Scenes/Menus/QuestionMenu/QuestionMenu.tscn")
 	add_child(scene)
 
@@ -77,4 +84,3 @@ func _on_purchase_button_pressed():
 				t_item.set_text(1, "Purchased!")
 		else:
 			return
-
