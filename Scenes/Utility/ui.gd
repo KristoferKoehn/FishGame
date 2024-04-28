@@ -104,7 +104,9 @@ func _on_purchase_button_pressed():
 			return
 
 func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+	get_tree().paused = false
+	SceneSwitcher.popScene()
+	#get_tree().quit()
 
 func _on_equip_customizations_button_pressed() -> void:
 	$PausePanel.visible = false
@@ -113,3 +115,8 @@ func _on_equip_customizations_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	emit_signal("back")
+
+
+func _on_report__card_button_button_down() -> void:
+	$PausePanel.visible = false
+	add_child(SceneSwitcher.instantiateScene("res://Scenes/Menus/ReportCard/ReportCard.tscn"))

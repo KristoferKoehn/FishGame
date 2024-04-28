@@ -62,6 +62,10 @@ func _on_division_double_digit_check_box_toggled(toggled_on: bool) -> void:
 	questionSettings.DivisionDoubleDigit = toggled_on
 	EducationManager.toggleDivisionDoubleDigitQuestionGenerator(toggled_on)
 
+func _on_target_weaknesses_toggled(toggled_on: bool) -> void:
+	questionSettings.TargetWeaknesses = toggled_on
+	EducationManager.toggleTargetWeaknesses(toggled_on)
+
 func _on_save_button_down() -> void:
 	var isValid = questionSettings.CheckIsValid()
 	if isValid:

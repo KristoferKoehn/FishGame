@@ -222,7 +222,9 @@ size = Vector2i(65, 65)
 render_target_update_mode = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer/SubViewport"]
-transform = Transform3D(2.57807e-08, 0.589679, 0.371136, 1, -4.37114e-08, -9.06002e-15, 1.62267e-08, 0.371136, -0.589679, 0, 0, 0)
+
+transform = Transform3D(4.99255e-09, 0.114189, -0.686979, 1, -4.37114e-08, -9.06002e-15, -3.00324e-08, -0.686979, -0.114189, 0, 0, 0)
+
 mesh = SubResource("CylinderMesh_r8il6")
 script = ExtResource("4_isorw")
 
@@ -277,6 +279,7 @@ text = "Get Worms
 "
 
 [node name="ShopPanel" type="Panel" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.647059)
 layout_mode = 1
 anchors_preset = -1
@@ -335,33 +338,37 @@ anchor_left = 0.056
 anchor_top = 0.147
 anchor_right = 0.937
 anchor_bottom = 0.901
-offset_left = -0.520004
-offset_top = 0.240005
-offset_right = 0.959961
-offset_bottom = -0.0800171
+offset_left = -7.52
+offset_top = 21.24
+offset_right = 20.9601
+offset_bottom = 6.91998
 script = ExtResource("7_ljgsi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PausePanel"]
 layout_mode = 0
-offset_left = 148.0
-offset_top = 143.0
-offset_right = 548.0
-offset_bottom = 563.0
+offset_left = 623.5
+offset_top = 264.0
+offset_right = 1096.5
+offset_bottom = 536.0
 
 [node name="equip_customizations_button" type="Button" parent="PausePanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Equip Customizations"
 
 [node name="report _card_button" type="Button" parent="PausePanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Report Card"
 
 [node name="options_button" type="Button" parent="PausePanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Options"
 
 [node name="quit_button" type="Button" parent="PausePanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Quit
 "
 
@@ -369,4 +376,5 @@ text = "Quit
 [connection signal="pressed" from="ShopPanel/PurchaseButton" to="." method="_on_purchase_button_pressed"]
 [connection signal="pressed" from="ShopPanel/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PausePanel/VBoxContainer/equip_customizations_button" to="." method="_on_equip_customizations_button_pressed"]
+[connection signal="button_down" from="PausePanel/VBoxContainer/report _card_button" to="." method="_on_report__card_button_button_down"]
 [connection signal="pressed" from="PausePanel/VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

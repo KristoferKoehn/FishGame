@@ -48,4 +48,5 @@ func setRecentLength(questionType: String) -> void:
 
 
 func _on_continue_button_down() -> void:
+	get_parent().find_child("PausePanel", true, false).visible = true
 	queue_free()

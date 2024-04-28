@@ -9,6 +9,7 @@ var MultiplicationSingleDigit: bool = false
 var MultiplicationDoubleDigit: bool = false
 var DivisionSingleDigit: bool = false
 var DivisionDoubleDigit: bool = false
+var TargetWeaknesses: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +33,8 @@ func CheckIsValid() -> bool:
 		isValid = true
 	if DivisionDoubleDigit:
 		isValid = true
+	if TargetWeaknesses:
+		isValid = true
 	return isValid
 
 func ConvertToString() -> String:
@@ -44,6 +47,7 @@ func ConvertToString() -> String:
 	settingsCode = ConvertBoolAndAppend(settingsCode, MultiplicationDoubleDigit)
 	settingsCode = ConvertBoolAndAppend(settingsCode, DivisionSingleDigit)
 	settingsCode = ConvertBoolAndAppend(settingsCode, DivisionDoubleDigit)
+	settingsCode = ConvertBoolAndAppend(settingsCode, TargetWeaknesses)
 	return settingsCode
 
 func ConvertBoolAndAppend(settingsCode: String, booleanValue: bool) -> String:
@@ -62,6 +66,7 @@ func updateFromSettingsCode(settingsCode: String) -> void:
 	MultiplicationDoubleDigit = ConvertCharToBool(settingsCode[5])
 	DivisionSingleDigit = ConvertCharToBool(settingsCode[6])
 	DivisionDoubleDigit = ConvertCharToBool(settingsCode[7])
+	TargetWeaknesses = ConvertCharToBool(settingsCode[8])
 
 func ConvertCharToBool(code: String) -> bool:
 	if code == "1":
