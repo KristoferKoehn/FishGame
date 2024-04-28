@@ -6,7 +6,7 @@ var pearls = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var length = defaultLength + randf_range(-(defaultLength / 2), defaultLength)
+	var length = defaultLength + randf_range(-(defaultLength / 2), (defaultLength / 2))
 	var ratio = length / defaultLength
 	var ratioCubed = ratio * ratio * ratio
 	var weight = defaultWeight * ratioCubed

@@ -26,6 +26,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Sorry, thats the wrong answer!"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -34,11 +35,13 @@ layout_mode = 2
 [node name="Retry" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
 text = "Retry"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
 text = "Quit"
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Retry" to="." method="_on_retry_button_down"]

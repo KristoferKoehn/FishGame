@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://c43fhajykhquo"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/QuestionMenu/Sketchpad/v_box_container.gd" id="1_hdtth"]
+[ext_resource type="Script" path="res://Scenes/Menus/QuestionMenu/Sketchpad/sketchpad.gd" id="1_waqnu"]
+
+[sub_resource type="Gradient" id="Gradient_jpill"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t1ol6"]
+gradient = SubResource("Gradient_jpill")
+
+[sub_resource type="Gradient" id="Gradient_hcgau"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fejim"]
+gradient = SubResource("Gradient_hcgau")
+
+[sub_resource type="Gradient" id="Gradient_gnnw4"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sjsc7"]
+gradient = SubResource("Gradient_gnnw4")
+
+[node name="Sketchpad" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_waqnu")
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+auto_translate_mode = 1
+theme_override_constants/separation = 10
+script = ExtResource("1_hdtth")
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Sketchpad options
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="undo" type="Button" parent="VBoxContainer/HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Undo"
+
+[node name="redo" type="Button" parent="VBoxContainer/HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Redo
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Red" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = SubResource("GradientTexture2D_t1ol6")
+stretch_mode = 0
+
+[node name="Green" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = SubResource("GradientTexture2D_fejim")
+stretch_mode = 0
+
+[node name="Blue" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = SubResource("GradientTexture2D_sjsc7")
+stretch_mode = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Small" type="Button" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Small"
+
+[node name="Medium" type="Button" parent="VBoxContainer/HBoxContainer3"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Med
+"
+
+[node name="Large" type="Button" parent="VBoxContainer/HBoxContainer3"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Large"
+
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/undo" to="." method="_on_undo_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/redo" to="." method="_on_redo_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer2/Red" to="." method="_on_red_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer2/Green" to="." method="_on_green_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer2/Blue" to="." method="_on_blue_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer3/Small" to="." method="_on_small_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer3/Medium" to="." method="_on_medium_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer3/Large" to="." method="_on_large_button_down"]

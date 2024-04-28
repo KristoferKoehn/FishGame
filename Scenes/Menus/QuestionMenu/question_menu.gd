@@ -1,6 +1,7 @@
-extends Node2D
+extends Control
 
 var question
+var sketchPadOpened: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,15 +11,14 @@ func _ready() -> void:
 	var container : Control = $QuestionUI/Panel
 	var scaleValue = (get_viewport_rect().size.x / 2) / container.size.x
 	container.scale = Vector2(scaleValue,scaleValue)
-	
 	container.pivot_offset = container.size / 2
 	var center = get_viewport_rect().size / 2
 	container.position = center - (container.size / 2)
+	$QuestionUI/Panel.size = $QuestionUI/Panel/MarginContainer.size
 
 func _on_submit_button_down() -> void:
 	if $QuestionUI/Panel/MarginContainer/VBoxContainer/HBoxContainer/LineEdit.text == str(question.answer):
 		EducationManager.completeQuestion(true)
-		#SceneSwitcher.popScene()
 		queue_free()
 	else:
 		if $QuestionUI/Panel/MarginContainer/VBoxContainer.get_node_or_null("IncorrectAnswerMenu") != null:
@@ -28,6 +28,30 @@ func _on_submit_button_down() -> void:
 			$QuestionUI/Panel/MarginContainer/VBoxContainer.add_child(incorrectAnswerMenu)
 			$QuestionUI/Panel.size.y = $QuestionUI/Panel.size.y + incorrectAnswerMenu.find_child("MarginContainer").size.y
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		_on_submit_button_down()
+
+
+func _on_open_sketchpad_button_down() -> void:
+	if sketchPadOpened:
+		# close it
+		var container : Control = $QuestionUI/Panel
+		var scaleValue = (get_viewport_rect().size.x / 2) / container.size.x
+		container.scale = Vector2(scaleValue,scaleValue)
+		container.pivot_offset = container.size / 2
+		var center = get_viewport_rect().size / 2
+		container.position = center - (container.size / 2)
+		$QuestionUI/Panel/MarginContainer/VBoxContainer/OpenSketchpad.text = "Open sketchpad"
+		sketchPadOpened = false
+	else:
+		# open it
+		var container : Control = $QuestionUI/Panel
+		container.scale = Vector2(1,1)
+		container.pivot_offset = Vector2(0,0)
+		container.position = Vector2(0,0)
+		$QuestionUI/Panel/MarginContainer/VBoxContainer/OpenSketchpad.text = "Close sketchpad"
+		var sketchpad: Node = SceneSwitcher.instantiateScene("res://Scenes/Menus/QuestionMenu/Sketchpad/Sketchpad.tscn")
+		$QuestionUI/Panel/MarginContainer/VBoxContainer.add_child(sketchpad)
+		sketchPadOpened = true
+		
