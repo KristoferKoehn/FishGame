@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cgxfdxp5e2h36"]
+[gd_scene load_steps=18 format=3 uid="uid://cgxfdxp5e2h36"]
 
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/fishing_mini_game.gd" id="1_elcsc"]
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/character_body_2d.gd" id="2_423i4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/GameScenes/FishingMiniGame/fish.gd" id="4_axm5v"]
 [ext_resource type="Texture2D" uid="uid://n07y7q0u0vit" path="res://Assets/2D/hai-fin-shadow.png" id="5_i455m"]
 [ext_resource type="Shader" path="res://Assets/Shaders/WindWaker.gdshader" id="6_x2wsp"]
+[ext_resource type="AudioStream" uid="uid://boifgrflh55p7" path="res://Assets/Sound/sound effects/zapsplat_sport_fishing_reel_wind_clicks_spool_001_78260.wav" id="7_do831"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k5f8b"]
 
@@ -173,3 +174,6 @@ theme_override_font_sizes/font_size = 36
 text = "10"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_do831")

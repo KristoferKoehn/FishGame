@@ -3,18 +3,15 @@
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_2x2ey"]
 [ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="1_vh1ed"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/main_menu_button_box.gd" id="2_016k6"]
-[ext_resource type="Shader" path="res://Assets/Shaders/WindWaker.gdshader" id="4_rg5yh"]
+[ext_resource type="PackedScene" uid="uid://qp3eutfsgqpv" path="res://Scenes/ComponentScenes/MainLevel.tscn" id="4_rit2u"]
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/mainmenucamera.gd" id="5_xdnef"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b53a0"]
-shader = ExtResource("4_rg5yh")
-shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
-shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
-shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
-shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(0.3, 0.3)
-shader_parameter/offset = Vector2(0, 0)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iwn2m"]
+[sub_resource type="Curve3D" id="Curve3D_jv4yf"]
+_data = {
+"points": PackedVector3Array(4.58674, -0.325125, -1.28913, -4.58674, 0.325125, 1.28913, -2.74368, 2.46643, 2.80576, -1.62233, 0.0559213, -1.63566, 1.62233, -0.0559213, 1.63566, -5.93334, 3.32998, 7.41832, -0.831672, -0.929093, -1.96437, 0.831672, 0.929093, 1.96437, 0.0990322, 5.57226, 18.9531, -0.833647, -0.309359, -0.394194, 0.833647, 0.309359, 0.394194, 2.95471, 7.41672, 20.4733, -1.33769, -2.09999, 2.31319, 1.33769, 2.09999, -2.31319, 30.0306, 14.7696, 36.4296, -0.176798, -1.8979, 1.74693, 0.176798, 1.8979, -1.74693, 25.2018, 18.0293, 29.2023, -0.0595055, -1.17798, 1.49715, 0.0595055, 1.17798, -1.49715, 18.9822, 19.0966, 22.8948, 1.34468, -0.462704, 1.39247, -1.34468, 0.462704, -1.39247, 11.9164, 18.2601, 17.6934, 1.74811, 0.129972, 1.33631, -1.74811, -0.129972, -1.33631, 6.90519, 16.5292, 15.0948, 1.54871, 0.280163, 0.86285, -1.54871, -0.280163, -0.86285, 3.42208, 18.0293, 10.6976, 1.94014, 0.727953, 1.12718, -1.94014, -0.727953, -1.12718, -2.78623, 17.0485, 6.36303, -0.990604, 5.75974, 0.506353, 0.990604, -5.75974, -0.506353, -7.43496, 10.7886, 8.41373, 9.795, 0, 0, 0, 0, 0, -2.74368, 2.46643, 2.80576),
+"tilts": PackedFloat32Array(1.83561, 1.4666, 0.322759, 0, 0, 0, 0, 0, 0, 0, 0, 1.36076, -0.0759221)
+}
+point_count = 13
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -45,12 +42,19 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Quit"
 
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -1
-material = SubResource("ShaderMaterial_b53a0")
-position = Vector2(960, 540)
-scale = Vector2(1920, 1080)
-texture = SubResource("PlaceholderTexture2D_iwn2m")
+[node name="MainLevel" parent="." instance=ExtResource("4_rit2u")]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_jv4yf")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.270571, 0.0655416, 0.960464, 3.72528e-09, 0.997678, -0.0680811, -0.962698, -0.0184208, -0.269943, -2.74368, 2.46643, 2.80576)
+tilt_enabled = false
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-0.270571, 0.0655418, 0.960466, 3.72529e-09, 0.99768, -0.0680812, -0.9627, -0.0184208, -0.269944, -2.74368, 2.46643, 2.80576)
+top_level = true
+script = ExtResource("5_xdnef")
 
 [connection signal="button_down" from="MainMenuButtonBox/Play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="MainMenuButtonBox/QuestionSettings" to="." method="_on_question_settings_button_down"]

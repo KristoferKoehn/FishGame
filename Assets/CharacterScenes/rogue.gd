@@ -52,7 +52,6 @@ func _input(event):
 			tween_to_node()
 			InputLockout = true;
 			ContextNode.interacted()
-	
 
 func tween_to_node() -> void:
 	var tween = get_tree().create_tween()
