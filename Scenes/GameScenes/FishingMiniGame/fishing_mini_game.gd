@@ -13,7 +13,6 @@ var countingDown = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#position = Vector2(150,0)
 	fish = $Fish
 	hook = $CharacterBody2D/Bobber/Hook
 	catchBar = $Control/ProgressBar

@@ -52,6 +52,10 @@ func _on_open_sketchpad_button_down() -> void:
 		container.pivot_offset = Vector2(0,0)
 		container.position = Vector2(0,0)
 		$QuestionUI/Panel/MarginContainer/VBoxContainer/OpenSketchpad.text = "Close sketchpad"
+		var incorrectAnswerMenu = $QuestionUI/Panel/MarginContainer/VBoxContainer.find_child("IncorrectAnswerMenu", true, false)
+		if incorrectAnswerMenu != null:
+			incorrectAnswerMenu.deleteSelf()
+			
 		var sketchPad = $QuestionUI/Panel/MarginContainer/VBoxContainer.find_child("Sketchpad", true, false)
 		if sketchPad == null:
 			sketchPad = SceneSwitcher.instantiateScene("res://Scenes/Menus/QuestionMenu/Sketchpad/Sketchpad.tscn")

@@ -27,25 +27,26 @@ theme = ExtResource("2_m8b3y")
 
 [node name="Panel" type="Panel" parent="QuestionUI"]
 layout_mode = 0
-offset_right = 700.0
+offset_right = 820.0
 offset_bottom = 289.0
 
 [node name="MarginContainer" type="MarginContainer" parent="QuestionUI/Panel"]
 layout_mode = 0
-offset_right = 247.0
-offset_bottom = 116.0
+offset_right = 791.0
+offset_bottom = 289.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="QuestionUI/Panel/MarginContainer"]
+custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 
 [node name="QuestionPrompt" type="Label" parent="QuestionUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Multiply the following numbers: "
+text = "Multiply the two following numbers: "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="QuestionUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2

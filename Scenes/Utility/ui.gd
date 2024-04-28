@@ -113,3 +113,8 @@ func _on_equip_customizations_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	emit_signal("back")
+
+
+func _on_report__card_button_button_down() -> void:
+	$PausePanel.visible = false
+	add_child(SceneSwitcher.instantiateScene("res://Scenes/Menus/ReportCard/ReportCard.tscn"))

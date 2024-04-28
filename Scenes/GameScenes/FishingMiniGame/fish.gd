@@ -26,7 +26,9 @@ func _process(delta: float) -> void:
 	avoidWallsVector = Vector2(avoidWallsVector.x * xScalar, avoidWallsVector.y * yScalar) * ratio
 	var direction = (escapeHookVector + avoidWallsVector).normalized()
 	
-	var targetTransform = transform.looking_at(global_position - direction)
+	var targetTransform: Transform2D = transform.looking_at(global_position - direction)
+	targetTransform = Transform2D(targetTransform.get_rotation(), Vector2(0.5,0.5), targetTransform.get_skew(), targetTransform.get_origin())
+	#targetTransform.scale = Vector2(0.5,0.5)
 	transform = transform.interpolate_with(targetTransform, TURN_SPEED * delta)
 	
 	velocity = Vector2(-speed,0).rotated(rotation)
