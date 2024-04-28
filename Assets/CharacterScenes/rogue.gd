@@ -18,15 +18,11 @@ func _ready() -> void:
 	CustomizationManager.register_player(self)
 
 
-func _process(_delta):
-	pass
-
 func _physics_process(delta: float) -> void:
 	$CameraAttachPoint.global_position = global_position + Vector3(-10, 4, 0)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 
 	if !InputLockout:
 		# Get the input direction and handle the movement/deceleration.
