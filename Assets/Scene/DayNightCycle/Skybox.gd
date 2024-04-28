@@ -80,6 +80,9 @@ const DAYS_IN_YEAR : int = 365
 @onready var moon : DirectionalLight3D = $Moon
 
 func _ready() -> void :
+	if !locked:
+		TimeManager.register_skybox(self)
+		pass
 	if OS.has_feature("dedicated_server") :
 		return
 	if is_instance_valid( sun ) :
@@ -99,6 +102,7 @@ func _ready() -> void :
 func _process( delta: float ) -> void :
 	if not Engine.is_editor_hint() && !locked: # We don't want a time lapse in the editor
 		day_time += delta * time_scale
+		
 
 func _update() -> void :
 	if OS.has_feature("dedicated_server") :

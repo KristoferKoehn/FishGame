@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhe1tuwqflvvk"]
+
+[ext_resource type="PackedScene" uid="uid://07crcfwxrvqo" path="res://Assets/3D/DungeonProps/chest.glb" id="1_o8633"]
+[ext_resource type="Script" path="res://chest_visuals.gd" id="2_my8j1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0ovn"]
+albedo_color = Color(0.941176, 0.972549, 1, 1)
+
+[node name="chest_visuals" instance=ExtResource("1_o8633")]
+script = ExtResource("2_my8j1")
+
+[node name="chest" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o0ovn")

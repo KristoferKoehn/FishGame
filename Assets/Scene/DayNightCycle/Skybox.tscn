@@ -28,7 +28,7 @@ shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
 shader_parameter/clouds_speed = 2.0
 shader_parameter/clouds_direction = 0.2
 shader_parameter/clouds_scale = 1.0
-shader_parameter/clouds_cutoff = 0.5
+shader_parameter/clouds_cutoff = 0.3
 shader_parameter/clouds_fuzziness = 0.5
 shader_parameter/clouds_weight = 0.0
 shader_parameter/clouds_blur = 0.25
@@ -36,7 +36,7 @@ shader_parameter/stars_speed = 1.0
 shader_parameter/stars_scale = 1.0
 shader_parameter/stars_opacity = 1.0
 shader_parameter/stars_texture = ExtResource("3_mjyi7")
-shader_parameter/overwritten_time = 301220.0
+shader_parameter/overwritten_time = 301093.0
 
 [sub_resource type="Sky" id="Sky_q13r3"]
 sky_material = SubResource("ShaderMaterial_msgkm")
@@ -52,7 +52,7 @@ fog_density = 0.005
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_g4j45")
-day_time = 8.2973
+day_time = 10.9254
 latitude = 47.6
 day_of_year = 125
 use_day_time_for_shader = true
@@ -63,16 +63,16 @@ moon_base_enegry = 0.1
 environment = SubResource("Environment_bh1jy")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.764392, -0.608876, -0.212076, 0.601906, 0.55598, 0.573233, -0.231118, -0.565824, 0.791473, 0, 0, 0)
+transform = Transform3D(0.846398, -0.20502, -0.491506, 0.526814, 0.187209, 0.829108, -0.0779694, -0.960687, 0.26646, 0, 0, 0)
 rotation_order = 4
-light_energy = 0.25
+light_energy = 0.0
 shadow_enabled = true
 shadow_opacity = 0.75
 shadow_blur = 5.0
 directional_shadow_mode = 0
 
 [node name="Moon" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.550403, 0.606258, -0.574027, 0.81029, -0.553589, 0.192269, -0.201211, -0.570954, -0.795943, 0, 0, 0)
+transform = Transform3D(0.657263, 0.217111, -0.721712, 0.753628, -0.19825, 0.62669, -0.00701766, -0.955802, -0.293923, 0, 0, 0)
 rotation_order = 4
 light_color = Color(1, 0.980392, 0.6, 1)
 light_energy = 0.1
