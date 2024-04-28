@@ -222,7 +222,9 @@ size = Vector2i(65, 65)
 render_target_update_mode = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Panel/HBoxContainer/MarginContainer3/HBoxContainer/SubViewportContainer/SubViewport"]
+
 transform = Transform3D(4.99255e-09, 0.114189, -0.686979, 1, -4.37114e-08, -9.06002e-15, -3.00324e-08, -0.686979, -0.114189, 0, 0, 0)
+
 mesh = SubResource("CylinderMesh_r8il6")
 script = ExtResource("4_isorw")
 
