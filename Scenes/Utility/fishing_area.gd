@@ -50,3 +50,4 @@ func interacted() -> void:
 	var questionButton: BaseButton = ui.find_child("GetQuestion")
 	questionButton.disabled = true
 	ui.add_child(baitSelectionMenu)
+	player.find_child("AnimationPlayer").play("Idle")
