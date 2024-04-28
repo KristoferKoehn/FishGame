@@ -7,7 +7,7 @@ var pearls: int = 0
 
 # Data for rewards
 var baitIsSuperWorm = false
-var chanceOfChest = 30/100.0 # needs .0
+var chanceOfChest: float = 30/100.0 # needs .0
 var expectedFishValue = 1111
 
 # Called when the node enters the scene tree for the first time.

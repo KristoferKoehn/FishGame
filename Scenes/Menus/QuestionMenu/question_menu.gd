@@ -43,6 +43,7 @@ func _on_open_sketchpad_button_down() -> void:
 		var center = get_viewport_rect().size / 2
 		container.position = center - (container.size / 2)
 		$QuestionUI/Panel/MarginContainer/VBoxContainer/OpenSketchpad.text = "Open sketchpad"
+		$QuestionUI/Panel/MarginContainer/VBoxContainer.find_child("Sketchpad", true, false).visible = false
 		sketchPadOpened = false
 	else:
 		# open it
@@ -51,7 +52,11 @@ func _on_open_sketchpad_button_down() -> void:
 		container.pivot_offset = Vector2(0,0)
 		container.position = Vector2(0,0)
 		$QuestionUI/Panel/MarginContainer/VBoxContainer/OpenSketchpad.text = "Close sketchpad"
-		var sketchpad: Node = SceneSwitcher.instantiateScene("res://Scenes/Menus/QuestionMenu/Sketchpad/Sketchpad.tscn")
-		$QuestionUI/Panel/MarginContainer/VBoxContainer.add_child(sketchpad)
+		var sketchPad = $QuestionUI/Panel/MarginContainer/VBoxContainer.find_child("Sketchpad", true, false)
+		if sketchPad == null:
+			sketchPad = SceneSwitcher.instantiateScene("res://Scenes/Menus/QuestionMenu/Sketchpad/Sketchpad.tscn")
+			$QuestionUI/Panel/MarginContainer/VBoxContainer.add_child(sketchPad)
+		else:
+			sketchPad.visible = true
 		sketchPadOpened = true
 		

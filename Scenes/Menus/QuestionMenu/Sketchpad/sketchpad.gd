@@ -6,13 +6,13 @@ var linesStack: Array = []
 var redoStack: Array = []
 var currentLine: Line2D = null
 var color: Color = Color.BLUE
-var lineWidth: float = 3
+var lineWidth: float = 12
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		pressed = event.pressed
 		
-		if pressed && event.position.x > get_parent().size.x:
+		if pressed && event.position.x > get_parent().size.x && visible == true:
 			redoStack = []
 			currentLine = Line2D.new()
 			currentLine.default_color = color
@@ -66,12 +66,12 @@ func _on_blue_button_down() -> void:
 
 
 func _on_small_button_down() -> void:
-	lineWidth = 3
-
-
-func _on_medium_button_down() -> void:
 	lineWidth = 6
 
 
-func _on_large_button_down() -> void:
+func _on_medium_button_down() -> void:
 	lineWidth = 12
+
+
+func _on_large_button_down() -> void:
+	lineWidth = 24
