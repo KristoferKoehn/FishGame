@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyxainy71lo5i"]
+
+[ext_resource type="PackedScene" uid="uid://2jep8lh67cs8" path="res://Scenes/Managers/EducationManager/QuestionGenerators/QuestionGenerator.tscn" id="1_75mxy"]
+[ext_resource type="Script" path="res://Scenes/Managers/EducationManager/QuestionGenerators/TargetWeaknessesQuestionGenerator/target_weaknesses_question_generator.gd" id="2_4qher"]
+
+[node name="TargetWeaknessesQuestionGenerator" instance=ExtResource("1_75mxy")]
+script = ExtResource("2_4qher")

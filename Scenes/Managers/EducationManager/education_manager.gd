@@ -2,14 +2,15 @@ extends Node
 
 var questionSettings: QuestionSettings = null
 var questionGenerators : Array = []
-var aditionSingleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/AdditionQuestionGenerators/AdditionSingleDigitQuestionGenerator/addition_single_digit_question_generator.tscn").instantiate()
-var aditionDoubleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/AdditionQuestionGenerators/AdditionDoubleDigitQuestionGenerator/addition_double_digit_question_generator.tscn").instantiate()
+var additionSingleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/AdditionQuestionGenerators/AdditionSingleDigitQuestionGenerator/addition_single_digit_question_generator.tscn").instantiate()
+var additionDoubleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/AdditionQuestionGenerators/AdditionDoubleDigitQuestionGenerator/addition_double_digit_question_generator.tscn").instantiate()
 var subtractionSingleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/SubtractionQuestionGenerators/SubtractionSingleDigitQuestionGenerator/subtraction_single_digit_question_generator.tscn").instantiate()
 var subtractionDoubleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/SubtractionQuestionGenerators/SubtractionDoubleDigitQuestionGenerator/subtraction_double_digit_question_generator.tscn").instantiate()
 var multiplicationSingleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/MultiplicationQuestionGenerators/MultiplicationSingleDigitQuestionGenerator/multiplication_single_digit_question_generator.tscn").instantiate()
 var multiplicationDoubleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/MultiplicationQuestionGenerators/MultiplicationDoubleDigitQuestionGenerator/multiplication_double_digit_question_generator.tscn").instantiate()
 var divisionSingleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/DivisionQuestionGenerators/DivisionSingleDigitQuestionGenerator/division_single_digit_question_generator.tscn").instantiate()
 var divisionDoubleDigitQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/DivisionQuestionGenerators/DivisionDoubleDigitQuestionGenerator/division_double_digit_question_generator.tscn").instantiate()
+var targetWeaknessesQuestionGenerator: QuestionGenerator = load("res://Scenes/Managers/EducationManager/QuestionGenerators/TargetWeaknessesQuestionGenerator/target_weaknesses_question_generator.tscn").instantiate()
 signal questionCompleted(success: bool)
 var currentGenerator: QuestionGenerator  = null
 var questionHistory: Dictionary = {"additionSingle": [0,0,0], "additionDouble": [0,0,0], "subtractionSingle": [0,0,0], "subtractionDouble": [0,0,0], "multiplicationSingle": [0,0,0], "multiplicationDouble": [0,0,0], "divisionSingle": [0,0,0], "divisionDouble": [0,0,0], "allTypes": [0,0,0]}
@@ -35,6 +36,7 @@ func _ready() -> void:
 	toggleMultiplicationDoubleDigitQuestionGenerator(questionSettings.MultiplicationDoubleDigit)
 	toggleDivisionSingleDigitQuestionGenerator(questionSettings.DivisionSingleDigit)
 	toggleDivisionDoubleDigitQuestionGenerator(questionSettings.DivisionDoubleDigit)
+	toggleTargetWeaknesses(questionSettings.TargetWeaknesses)
 	
 	loadQuestionHistory()
 
@@ -85,10 +87,10 @@ func updateQuestionHistory(questionType: String, success: bool) -> void:
 	saveQuestionHistory()
 
 func toggleAdditionSingleDigitQuestionGenerator(toggle: bool) -> void:
-	toggleGenerator(toggle, aditionSingleDigitQuestionGenerator)
+	toggleGenerator(toggle, additionSingleDigitQuestionGenerator)
 
 func toggleAdditionDoubleDigitQuestionGenerator(toggle: bool) -> void:
-	toggleGenerator(toggle, aditionDoubleDigitQuestionGenerator)
+	toggleGenerator(toggle, additionDoubleDigitQuestionGenerator)
 	
 func toggleSubtractionSingleDigitQuestionGenerator(toggle: bool) -> void:
 	toggleGenerator(toggle, subtractionSingleDigitQuestionGenerator)
@@ -107,6 +109,9 @@ func toggleDivisionSingleDigitQuestionGenerator(toggle: bool) -> void:
 
 func toggleDivisionDoubleDigitQuestionGenerator(toggle: bool) -> void:
 	toggleGenerator(toggle, divisionDoubleDigitQuestionGenerator)
+
+func toggleTargetWeaknesses(toggle: bool) -> void:
+	toggleGenerator(toggle, targetWeaknessesQuestionGenerator)
 
 func toggleGenerator(toggle: bool, generator: QuestionGenerator) -> void:
 	if toggle:

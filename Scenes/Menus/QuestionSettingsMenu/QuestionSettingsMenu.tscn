@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cak7c86ox8ar6"]
+[gd_scene load_steps=7 format=3 uid="uid://cak7c86ox8ar6"]
 
 [ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="1_c7q58"]
 [ext_resource type="Script" path="res://Scenes/Menus/QuestionSettingsMenu/question_settings_menu.gd" id="1_qvcka"]
 [ext_resource type="Script" path="res://Scenes/Menus/QuestionSettingsMenu/question_settings_v_box.gd" id="2_d0pfv"]
+[ext_resource type="Shader" path="res://Assets/Shaders/WindWaker.gdshader" id="4_ulpri"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t83go"]
+shader = ExtResource("4_ulpri")
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(0.3, 0.3)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2o0bk"]
 
 [node name="QuestionSettingsMenu" type="Control"]
 layout_mode = 3
@@ -31,6 +43,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Title" type="Label" parent="QuestionSettingsVBox/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Question Options"
 horizontal_alignment = 1
 
@@ -51,6 +64,7 @@ layout_mode = 2
 
 [node name="AdditionLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Addition questions options"
 horizontal_alignment = 1
 
@@ -64,6 +78,7 @@ alignment = 1
 
 [node name="AdditionSingleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionSingleDigitOptionContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Single digit
 "
 horizontal_alignment = 1
@@ -81,6 +96,7 @@ alignment = 1
 [node name="AdditionDoubleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionDoubleDigitOptionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Double digit
 "
 horizontal_alignment = 1
@@ -104,6 +120,7 @@ alignment = 1
 [node name="SubtractionLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Subtraction questions options"
 horizontal_alignment = 1
 
@@ -120,6 +137,7 @@ alignment = 1
 [node name="SubtractionSingleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer/SubtractionSingleDigitOptionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Single digit
 "
 horizontal_alignment = 1
@@ -136,6 +154,7 @@ alignment = 1
 [node name="SubtractionDoubleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer2/SubtractionContainer/SubtractionOptionsContainer/SubtractionDoubleDigitOptionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Double digit
 "
 horizontal_alignment = 1
@@ -160,6 +179,7 @@ alignment = 1
 [node name="MultiplicationLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Multiplication questions options"
 horizontal_alignment = 1
 
@@ -176,6 +196,7 @@ alignment = 1
 [node name="MultiplicationSingleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationSingleDigitOptionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Single digit
 "
 horizontal_alignment = 1
@@ -192,6 +213,7 @@ alignment = 1
 [node name="MultiplicationDoubleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationDoubleDigitOptionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Double digit
 "
 horizontal_alignment = 1
@@ -216,6 +238,7 @@ alignment = 1
 [node name="DivisionLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Division questions options"
 horizontal_alignment = 1
 
@@ -232,6 +255,7 @@ alignment = 1
 [node name="DivisionSingleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionSingleDigitOptionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Single digit
 "
 horizontal_alignment = 1
@@ -248,6 +272,7 @@ alignment = 1
 [node name="DivisionDoubleDigitLabel" type="Label" parent="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionDoubleDigitOptionContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Double digit
 "
 horizontal_alignment = 1
@@ -256,9 +281,29 @@ horizontal_alignment = 1
 auto_translate_mode = 1
 layout_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestionSettingsVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="QuestionSettingsVBox/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Target weaknesses"
+
+[node name="TargetWeaknesses" type="CheckBox" parent="QuestionSettingsVBox/HBoxContainer"]
+layout_mode = 2
+
 [node name="Save" type="Button" parent="QuestionSettingsVBox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Save"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_t83go")
+position = Vector2(960, 540)
+scale = Vector2(1920, 1080)
+texture = SubResource("PlaceholderTexture2D_2o0bk")
 
 [connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionSingleDigitOptionContainer/AdditionSingleDigitCheckBox" to="." method="_on_addition_single_digit_check_box_toggled"]
 [connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer/AdditionContainer/AdditionOptionsContainer/AdditionDoubleDigitOptionContainer/AdditionDoubleDigitCheckBox" to="." method="_on_addition_double_digit_check_box_toggled"]
@@ -268,4 +313,5 @@ text = "Save"
 [connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer3/MultiplicationContainer/MultiplicationOptionsContainer/MultiplicationDoubleDigitOptionContainer/MultiplicationDoubleDigitCheckBox" to="." method="_on_multiplication_double_digit_check_box_toggled"]
 [connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionSingleDigitOptionContainer/DivisionSingleDigitCheckBox" to="." method="_on_division_single_digit_check_box_toggled"]
 [connection signal="toggled" from="QuestionSettingsVBox/QuestionSettingsContainer/MarginContainer4/DivisionContainer/DivisionOptionsContainer/DivisionDoubleDigitOptionContainer/DivisionDoubleDigitCheckBox" to="." method="_on_division_double_digit_check_box_toggled"]
+[connection signal="toggled" from="QuestionSettingsVBox/HBoxContainer/TargetWeaknesses" to="." method="_on_target_weaknesses_toggled"]
 [connection signal="button_down" from="QuestionSettingsVBox/Save" to="." method="_on_save_button_down"]

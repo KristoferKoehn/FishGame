@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bimxsj3fbjk1k"]
+[gd_scene load_steps=7 format=3 uid="uid://bimxsj3fbjk1k"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_2x2ey"]
 [ext_resource type="Theme" uid="uid://bwjbvqodd16m6" path="res://Assets/Themes/DefaultTheme.tres" id="1_vh1ed"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/main_menu_button_box.gd" id="2_016k6"]
+[ext_resource type="Shader" path="res://Assets/Shaders/WindWaker.gdshader" id="4_rg5yh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b53a0"]
+shader = ExtResource("4_rg5yh")
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(0.3, 0.3)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iwn2m"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -32,6 +44,13 @@ text = "Question Settings"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Quit"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_b53a0")
+position = Vector2(960, 540)
+scale = Vector2(1920, 1080)
+texture = SubResource("PlaceholderTexture2D_iwn2m")
 
 [connection signal="button_down" from="MainMenuButtonBox/Play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="MainMenuButtonBox/QuestionSettings" to="." method="_on_question_settings_button_down"]

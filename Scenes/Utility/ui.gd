@@ -104,7 +104,9 @@ func _on_purchase_button_pressed():
 			return
 
 func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+	get_tree().paused = false
+	SceneSwitcher.popScene()
+	#get_tree().quit()
 
 func _on_equip_customizations_button_pressed() -> void:
 	$PausePanel.visible = false
