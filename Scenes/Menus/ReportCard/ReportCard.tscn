@@ -270,3 +270,11 @@ custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "1000 / 1000 correct"
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Continue"
+
+[connection signal="button_down" from="VBoxContainer/Continue" to="." method="_on_continue_button_down"]
