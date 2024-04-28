@@ -17,11 +17,15 @@ func _physics_process(delta: float) -> void:
 		speed = defaultSpeed
 	
 	if direction:
+		if !$"../AudioStreamPlayer2D".playing:
+			$"../AudioStreamPlayer2D".play()
 		velocity.x = direction.x * speed
 		velocity.y = direction.y * speed
 		var targetTransform = transform.looking_at(global_position - direction)
 		transform = transform.interpolate_with(targetTransform, turnSpeed * delta)
 	else:
+		if $"../AudioStreamPlayer2D".playing:
+			$"../AudioStreamPlayer2D".stop()
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
