@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjo3j8ugpjlpn"]
+[gd_scene load_steps=13 format=3 uid="uid://cjo3j8ugpjlpn"]
 
 [ext_resource type="PackedScene" uid="uid://qp3eutfsgqpv" path="res://Scenes/ComponentScenes/MainLevel.tscn" id="1_po8m0"]
 [ext_resource type="PackedScene" uid="uid://dthxavwwq2uvk" path="res://Assets/CharacterScenes/rogue.tscn" id="2_6fhvn"]
@@ -6,23 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://doyisa4ue0s8s" path="res://Scenes/Utility/FishingArea.tscn" id="4_gprvy"]
 [ext_resource type="PackedScene" uid="uid://pvhab1atl23y" path="res://Scenes/Utility/ui.tscn" id="5_p0sbi"]
 [ext_resource type="AudioStream" uid="uid://n36plwybru7y" path="res://Assets/Sound/Track1/DayTime.wav" id="6_t08ee"]
-[ext_resource type="AudioStream" uid="uid://dnvmyeeplk6j2" path="res://Assets/Sound/Track1/LowSunTime.wav" id="7_gcbqx"]
-[ext_resource type="AudioStream" uid="uid://bhu8l5a1onxjs" path="res://Assets/Sound/Track1/NightTime.wav" id="8_wr27q"]
 [ext_resource type="PackedScene" uid="uid://ch87850sacgx1" path="res://Scenes/Utility/ShopScene.tscn" id="9_go6cp"]
 [ext_resource type="PackedScene" uid="uid://cm082mmseleu3" path="res://Assets/3D/City Builder Bits/Assets/gltf/car_police.gltf" id="10_kunvn"]
 [ext_resource type="PackedScene" uid="uid://2gaandr5pom2" path="res://Assets/3D/Prototype Bits/Assets/gltf/Barrel_A.gltf" id="11_02tjr"]
 [ext_resource type="Script" path="res://Scenes/GameScenes/PrimaryGameScene/garbage_barrels.gd" id="11_pal5j"]
 [ext_resource type="PackedScene" uid="uid://chwll18flutse" path="res://Assets/3D/Prototype Bits/Assets/gltf/Barrel_B.gltf" id="12_drrrg"]
 [ext_resource type="PackedScene" uid="uid://bwfb8jqbnjql6" path="res://Assets/3D/Prototype Bits/Assets/gltf/Barrel_C.gltf" id="13_yd5g0"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i85r6"]
-streams_count = 3
-stream_0/stream = ExtResource("6_t08ee")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("7_gcbqx")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("8_wr27q")
-stream_2/weight = 1.0
 
 [node name="PrimaryGameScene" type="Node3D"]
 
@@ -36,7 +25,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.397
 [node name="UI" parent="." instance=ExtResource("5_p0sbi")]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = SubResource("AudioStreamRandomizer_i85r6")
+stream = ExtResource("6_t08ee")
 autoplay = true
 bus = &"Music"
 
